@@ -127,6 +127,20 @@ const initialState = [
         items: [],
       },
 
+         {
+        url: '/',
+        icon: <Invoice />,
+        title: 'DIRECT ASSESSMENT',
+        items: [
+          {
+            url: '/direct-asses/assesment',
+            title: 'form',
+            items: [],
+          },
+      
+        ],
+      },
+
       // {
       //   url: "/",
       //   icon: <FiList size={20} />,
