@@ -18,6 +18,7 @@ const Index = () => {
   const [togglee11, setToggle11] = useState('hidden')
   const [togglee12, setToggle12] = useState('hidden')
   const [resiToggle, setresToggle] = useState('hidden')
+  const [form1toggle, setform1toggle] = useState('')
   const [form2toggle, setform2toggle] = useState('')
   const [formValues, setFormValues] = useState([{
     employername: "", employeraddress: "", tax:
@@ -178,10 +179,76 @@ const Index = () => {
 
   };
 
+  const formTog1 = e => {
+    e.preventDefault()
+    let toggleval = 'hidden'
+    setToggle(toggleval)
+
+  };
   const formTog2 = e => {
     e.preventDefault()
     let toggleval = 'hidden'
     setToggle2(toggleval)
+
+  };
+  const formTog3 = e => {
+    e.preventDefault()
+    let toggleval = 'hidden'
+    setToggle3(toggleval)
+
+  };
+  const formTog4 = e => {
+    e.preventDefault()
+    let toggleval = 'hidden'
+    setToggle4(toggleval)
+
+  };
+  const formTog5 = e => {
+    e.preventDefault()
+    let toggleval = 'hidden'
+    setToggle5(toggleval)
+
+  };
+  const formTog6 = e => {
+    e.preventDefault()
+    let toggleval = 'hidden'
+    setToggle6(toggleval)
+
+  };
+  const formTog7 = e => {
+    e.preventDefault()
+    let toggleval = 'hidden'
+    setToggle7(toggleval)
+
+  };
+  const formTog8 = e => {
+    e.preventDefault()
+    let toggleval = 'hidden'
+    setToggle8(toggleval)
+
+  };
+  const formTog9 = e => {
+    e.preventDefault()
+    let toggleval = 'hidden'
+    setToggle9(toggleval)
+
+  };
+  const formTog10 = e => {
+    e.preventDefault()
+    let toggleval = 'hidden'
+    setToggle10(toggleval)
+
+  };
+  const formTog11 = e => {
+    e.preventDefault()
+    let toggleval = 'hidden'
+    setToggle11(toggleval)
+
+  };
+  const formTog12 = e => {
+    e.preventDefault()
+    let toggleval = 'hidden'
+    setToggle12(toggleval)
 
   };
 
@@ -345,6 +412,7 @@ const Index = () => {
               <form>
                 {formValues.map((element, index) => (
                   <div key={index}>
+                    <p className="font-bold flex justify-center mb-4"> Add Employment {index + 1}</p>
                     <div className="mb-6 grid grid-cols-3 gap-4">
                       <label>Employer Name:</label>
                       <input type="text" name="employername" className="form-control w-full rounded" />
@@ -373,8 +441,7 @@ const Index = () => {
                       <input type="file" name="upload" className="w-full"
                       />
                     </div>
-                    <div className='pb-3'>
-
+                    <div className='pb-5'>
                       <hr />
                     </div>
                   </div>
@@ -402,14 +469,14 @@ const Index = () => {
                   >
                     Save
                   </button>
-                  {/* <span onClick={onChange2} className="h-10 w-10 bg-green-100 text-white flex items-center justify-center rounded-full text-lg font-display font-bold">
-                    <a href="">
-                      <FiTriangle
-                        size={15}
-                        className="stroke-current text-green-500"
-                      />
-                    </a>
-                  </span> */}
+                  <button onClick={formTog1} className="h-10 w-10 bg-green-100 text-white flex items-center justify-center rounded-full text-lg font-display font-bold">
+                      <a href="">
+                        <FiTriangle
+                          size={15}
+                          className="stroke-current text-green-500"
+                        />
+                      </a>
+                    </button>
                 </div>
               </form>
 
@@ -570,9 +637,9 @@ const Index = () => {
                     Add another business
                   </button>
 
-                  <div className="mb-6 grid grid-cols-3 gap-4">
-                    <label htmlFor="comments">Optional Comments:</label>
-                    <textarea name="" id="comments" cols="40" rows="3" className="rounded"></textarea>
+                  <div className="mb-6">
+                    <label htmlFor="comments" className="block">Optional Comments:</label>
+                    <textarea name="" id="comments" cols="40" rows="3" className="rounded " ></textarea>
                   </div>
                   <div className="mb-6 flex justify-between">
                     <button
@@ -655,7 +722,7 @@ const Index = () => {
                     <label htmlFor="comments">Optional Comments:</label>
                     <textarea name="" id="comments" cols="40" rows="2" className="rounded"></textarea>
                   </div>
-                  <div className="mb-6 flex justify-center">
+                  <div className="mb-6 flex justify-between">
                     <button
                       style={{ backgroundColor: "#84abeb" }}
                       className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
@@ -751,7 +818,7 @@ const Index = () => {
                     <label htmlFor="comments">Optional Comments:</label>
                     <textarea name="" id="comments" cols="40" rows="2" className="rounded"></textarea>
                   </div>
-                  <div className="mb-6 flex justify-center">
+                  <div className="mb-6 flex justify-between">
                     <button
                       style={{ backgroundColor: "#84abeb" }}
                       className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
@@ -828,7 +895,7 @@ const Index = () => {
                     <label htmlFor="comments">Optional Comments:</label>
                     <textarea name="" id="comments" cols="40" rows="2" className="rounded"></textarea>
                   </div>
-                  <div className="mb-6 flex justify-center">
+                  <div className="mb-6 flex justify-between">
                     <button
                       style={{ backgroundColor: "#84abeb" }}
                       className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
@@ -938,7 +1005,7 @@ const Index = () => {
                     <label htmlFor="comments">Optional Comments:</label>
                     <textarea name="" id="comments" cols="40" rows="2" className="rounded"></textarea>
                   </div>
-                  <div className="mb-6 flex justify-center">
+                  <div className="mb-6 flex justify-between">
                     <button
                       style={{ backgroundColor: "#84abeb" }}
                       className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
@@ -1025,7 +1092,7 @@ const Index = () => {
                     <label htmlFor="comments">Optional Comments:</label>
                     <textarea name="" id="comments" cols="40" rows="2" className="rounded"></textarea>
                   </div>
-                  <div className="mb-6 flex justify-center">
+                  <div className="mb-6 flex justify-between">
                     <button
                       style={{ backgroundColor: "#84abeb" }}
                       className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
@@ -1086,7 +1153,7 @@ const Index = () => {
                     <label htmlFor="comments">Optional Comments:</label>
                     <textarea name="" id="comments" cols="40" rows="2" className="rounded"></textarea>
                   </div>
-                  <div className="mb-6 flex justify-center">
+                  <div className="mb-6 flex justify-between">
                     <button
                       style={{ backgroundColor: "#84abeb" }}
                       className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
@@ -1160,7 +1227,7 @@ const Index = () => {
                   <label htmlFor="comments">Optional Comments:</label>
                   <textarea name="" id="comments" cols="40" rows="2" className="rounded"></textarea>
                 </div>
-                <div className="mb-6 flex justify-center">
+                <div className="mb-6 flex justify-between">
                   <button
                     style={{ backgroundColor: "#84abeb" }}
                     className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
@@ -1221,7 +1288,7 @@ const Index = () => {
                   <label htmlFor="comments">Optional Comments:</label>
                   <textarea name="" id="comments" cols="40" rows="2" className="rounded"></textarea>
                 </div>
-                <div className="mb-6 flex justify-center">
+                <div className="mb-6 flex justify-between">
                   <button
                     style={{ backgroundColor: "#84abeb" }}
                     className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
@@ -1282,7 +1349,7 @@ const Index = () => {
                   <label htmlFor="comments">Optional Comments:</label>
                   <textarea name="" id="comments" cols="40" rows="2" className="rounded"></textarea>
                 </div>
-                <div className="mb-6 flex justify-center">
+                <div className="mb-6 flex justify-between">
                   <button
                     style={{ backgroundColor: "#84abeb" }}
                     className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
