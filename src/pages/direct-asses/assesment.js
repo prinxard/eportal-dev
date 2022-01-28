@@ -25,6 +25,11 @@ const Index = () => {
       "", startdate: "", grosspay: "", upload: ""
   }])
 
+  const [formValues3, setFormValues3] = useState([{
+    test: "", test: "", test:
+      "", test: "", test: "", test: ""
+  }])
+
   let handleChange = (i, e) => {
     let newFormValues = [...formValues];
     newFormValues[i][e.target.name] = e.target.value;
@@ -39,11 +44,20 @@ const Index = () => {
     }])
   }
 
-  let removeFormFields = (i) => {
-    let newFormValues = [...formValues];
-    newFormValues.splice(i, 1);
-    setFormValues(newFormValues)
+  const addFormFields3 = (event) => {
+    event.preventDefault()
+    setFormValues3([...formValues3, {
+      test: "", test: "", test:
+        "", test: "", test: "", test: ""
+    }])
   }
+
+  // let removeFormFields = (i) => {
+  //   let newFormValues = [...formValues];
+  //   newFormValues.splice(i, 1);
+  //   setFormValues(newFormValues)
+  // }
+
   const onChange = e => {
     let toggleval = ' '
     setToggle(toggleval)
@@ -281,7 +295,7 @@ const Index = () => {
           <div className="grid grid-cols-3 gap-4">
             <div className="form-group mb-6">
               <input type="text" className="form-control w-full rounded"
-                placeholder="Tittle" />
+                placeholder="Title" />
             </div>
 
             <div className="form-group mb-6">
@@ -342,9 +356,6 @@ const Index = () => {
             </div>
 
             <div className="form-check form-check-inline">
-              {/* <input className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio1" />
-              <label className="form-check-label inline-block text-gray-800" for="inlineRadio10">Rented</label> */}
-
               <select className="form-select w-full" name="" id="typeofbusiness">
                 <option selected>Type of Residence</option>
                 <option value="1">Apartment</option>
@@ -470,13 +481,13 @@ const Index = () => {
                     Save
                   </button>
                   <button onClick={formTog1} className="h-10 w-10 bg-green-100 text-white flex items-center justify-center rounded-full text-lg font-display font-bold">
-                      <a href="">
-                        <FiTriangle
-                          size={15}
-                          className="stroke-current text-green-500"
-                        />
-                      </a>
-                    </button>
+                    <a href="">
+                      <FiTriangle
+                        size={15}
+                        className="stroke-current text-green-500"
+                      />
+                    </a>
+                  </button>
                 </div>
               </form>
 
@@ -508,6 +519,7 @@ const Index = () => {
 
             <div className={`flex justify-center border mb-3 p-6 rounded-lg bg-white w-fulll ${togglee2}`}>
               <form>
+
                 <div>
                   <div className="mb-6 grid grid-cols-3 gap-4">
                     <label htmlFor="typeofbusiness">Type of business:</label>
@@ -685,52 +697,61 @@ const Index = () => {
 
             <div className={`flex justify-center border mb-3 block p-6 rounded-lg bg-white w-full ${togglee3}`}>
               <form>
-                <div className="">
-                  <div className="mb-6 grid grid-cols-3 gap-4">
-                    <label htmlFor="employername">Partner Name:</label>
-                    <input type="text" id="employername" className="form-control w-full rounded"
-                    />
-                  </div>
-                  <div className="mb-6 grid grid-cols-3 gap-4">
-                    <label htmlFor="employername">Partner Address:</label>
-                    <input type="text" id="employername" className="form-control w-full rounded"
-                    />
-                  </div>
-                  <div className="mb-6 grid grid-cols-3 gap-4">
-                    <label htmlFor="employername">Partner Phone:</label>
-                    <input type="text" id="employername" className="form-control w-full rounded"
-                    />
-                  </div>
-                  <div className="mb-6 grid grid-cols-3 gap-4">
-                    <label htmlFor="employername">Partner Percentage:</label>
-                    <input type="text" id="employername" className="form-control w-full rounded"
-                    />
-                  </div>
+                {formValues3.map((element, index) => (
+                  
+                  <div className="">
+                     <p className="font-bold flex justify-center mb-4"> Add Partner {index + 1}</p>
+                    <div className="mb-6 grid grid-cols-3 gap-4">
+                      <label htmlFor="employername">Partner Name:</label>
+                      <input type="text" id="employername" className="form-control w-full rounded"
+                      />
+                    </div>
+                    <div className="mb-6 grid grid-cols-3 gap-4">
+                      <label htmlFor="employername">Partner Address:</label>
+                      <input type="text" id="employername" className="form-control w-full rounded"
+                      />
+                    </div>
+                    <div className="mb-6 grid grid-cols-3 gap-4">
+                      <label htmlFor="employername">Partner Phone:</label>
+                      <input type="text" id="employername" className="form-control w-full rounded"
+                      />
+                    </div>
+                    <div className="mb-6 grid grid-cols-3 gap-4">
+                      <label htmlFor="employername">Partner Percentage:</label>
+                      <input type="text" id="employername" className="form-control w-full rounded"
+                      />
+                    </div>
 
+                    <div className='pb-5'>
+                      <hr />
+                    </div>
 
-                  <div className="mb-6 grid grid-cols-3 gap-4">
-                    <button
-                      style={{ backgroundColor: "#84abeb" }}
-                      className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
-                      type="submit"
-                    >
-                      Add another Partner
-                    </button>
                   </div>
+                ))}
+                
+                <div className="mb-6 grid grid-cols-3 gap-4">
+                  <button
+                    onClick={addFormFields3}
+                    style={{ backgroundColor: "#84abeb" }}
+                    className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
+                    type="submit"
+                  >
+                    Add another Partner
+                  </button>
+                </div>
 
-                  <div className="mb-6 grid grid-cols-3 gap-4">
-                    <label htmlFor="comments">Optional Comments:</label>
-                    <textarea name="" id="comments" cols="40" rows="2" className="rounded"></textarea>
-                  </div>
-                  <div className="mb-6 flex justify-between">
-                    <button
-                      style={{ backgroundColor: "#84abeb" }}
-                      className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
-                      type="submit"
-                    >
-                      Save
-                    </button>
-                  </div>
+                <div className="mb-6 grid grid-cols-3 gap-4">
+                  <label htmlFor="comments">Optional Comments:</label>
+                  <textarea name="" id="comments" cols="40" rows="2" className="rounded"></textarea>
+                </div>
+                <div className="mb-6 flex justify-between">
+                  <button
+                    style={{ backgroundColor: "#84abeb" }}
+                    className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
+                    type="submit"
+                  >
+                    Save
+                  </button>
                 </div>
               </form>
             </div>
