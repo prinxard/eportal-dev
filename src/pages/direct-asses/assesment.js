@@ -25,6 +25,11 @@ const Index = () => {
       "", startdate: "", grosspay: "", upload: ""
   }])
 
+  const [formValues2, setFormValues2] = useState([{
+    test: "", test: "", test:
+      "", test: "", test: "", test: ""
+  }])
+
   const [formValues3, setFormValues3] = useState([{
     test: "", test: "", test:
       "", test: "", test: "", test: ""
@@ -47,6 +52,14 @@ const Index = () => {
   const addFormFields3 = (event) => {
     event.preventDefault()
     setFormValues3([...formValues3, {
+      test: "", test: "", test:
+        "", test: "", test: "", test: ""
+    }])
+  }
+
+  const addFormFields2 = (event) => {
+    event.preventDefault()
+    setFormValues2([...formValues2, {
       test: "", test: "", test:
         "", test: "", test: "", test: ""
     }])
@@ -519,157 +532,163 @@ const Index = () => {
 
             <div className={`flex justify-center border mb-3 p-6 rounded-lg bg-white w-fulll ${togglee2}`}>
               <form>
-
-                <div>
-                  <div className="mb-6 grid grid-cols-3 gap-4">
-                    <label htmlFor="typeofbusiness">Type of business:</label>
-                    <select className="form-select" name="" id="typeofbusiness">
-                      <option selected>Open this select menu</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
-                    </select>
-                  </div>
-
-                  <div className="mb-6 grid grid-cols-3 gap-4">
-                    <label htmlFor="businessname">Business Name:</label>
-                    <input type="text" id="businessname" className="form-control w-full rounded"
-                    />
-                  </div>
-
-                  <div className="mb-6 grid grid-cols-3 gap-4">
-                    <label htmlFor="businessaddress">Business Address:</label>
-                    <input type="text" id="businessaddress" className="form-control w-full rounded"
-                    />
-                  </div>
-
-                  <div className="mb-6 grid grid-cols-3 gap-4">
-                    <label htmlFor="employername">Business Start date:</label>
-                    <input type="date"
-                      className="form-control w-full rounded"
-                    />
-                  </div>
-
-                  <div className="mb-6 grid grid-cols-3 gap-4">
-                    <label htmlFor="turnover">Turnover-takings, fees, sales or money earned by your business:</label>
-                    <input type="text" id="turnover" className="form-control w-full rounded"
-                    />
-                  </div>
-
-                  <div className="mb-6 grid grid-cols-3 gap-4">
-                    <label htmlFor="turnover">Any other business income not included above:</label>
-                    <input type="text" id="turnover" className="form-control w-full rounded"
-                    />
-                  </div>
-
-                  <div className="mb-6 grid grid-cols-3 gap-4">
-                    <label htmlFor="cashbases">Did you use cash basis, money actually received and paid out, to calculate your income expense ?</label>
-                    <div className="flex">
-                      <div className="form-check form-check-inline">
-                        <input className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio1" />
-                        <label className="form-check-label inline-block text-gray-800" for="inlineRadio10">Yes</label>
-                      </div>
-
-                      <div className="form-check form-check-inline ml-5">
-                        <input className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio2" />
-                        <label className="form-check-label inline-block text-gray-800" for="inlineRadio20">No</label>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mb-6 grid grid-cols-3 gap-4">
-                    <label className="font-bold" htmlFor="businessincome">Total Business Income:</label>
-                    <p className="font-bold" id="businessincome">NGN 0.00</p>
-                  </div>
-
+                {formValues2.map((element, index) => (
                   <div>
-                    <p className="font-bold">Expenses</p>
+                     <p className="font-bold flex justify-center mb-4"> Add self Employment {index + 1}</p>
                     <div className="mb-6 grid grid-cols-3 gap-4">
-                      <label htmlFor="expenses">How would you like to record your expenses?</label>
+                      <label htmlFor="typeofbusiness">Type of business:</label>
+                      <select className="form-select" name="" id="typeofbusiness">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                    </div>
+
+                    <div className="mb-6 grid grid-cols-3 gap-4">
+                      <label htmlFor="businessname">Business Name:</label>
+                      <input type="text" id="businessname" className="form-control w-full rounded"
+                      />
+                    </div>
+
+                    <div className="mb-6 grid grid-cols-3 gap-4">
+                      <label htmlFor="businessaddress">Business Address:</label>
+                      <input type="text" id="businessaddress" className="form-control w-full rounded"
+                      />
+                    </div>
+
+                    <div className="mb-6 grid grid-cols-3 gap-4">
+                      <label htmlFor="employername">Business Start date:</label>
+                      <input type="date"
+                        className="form-control w-full rounded"
+                      />
+                    </div>
+
+                    <div className="mb-6 grid grid-cols-3 gap-4">
+                      <label htmlFor="turnover">Turnover-takings, fees, sales or money earned by your business:</label>
+                      <input type="text" id="turnover" className="form-control w-full rounded"
+                      />
+                    </div>
+
+                    <div className="mb-6 grid grid-cols-3 gap-4">
+                      <label htmlFor="turnover">Any other business income not included above:</label>
+                      <input type="text" id="turnover" className="form-control w-full rounded"
+                      />
+                    </div>
+
+                    <div className="mb-6 grid grid-cols-3 gap-4">
+                      <label htmlFor="cashbases">Did you use cash basis, money actually received and paid out, to calculate your income expense ?</label>
                       <div className="flex">
                         <div className="form-check form-check-inline">
                           <input className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio1" />
-                          <label className="form-check-label inline-block text-gray-800" for="inlineRadio10">Total value</label>
+                          <label className="form-check-label inline-block text-gray-800" for="inlineRadio10">Yes</label>
                         </div>
 
                         <div className="form-check form-check-inline ml-5">
                           <input className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio2" />
-                          <label className="form-check-label inline-block text-gray-800" for="inlineRadio20">Break down</label>
+                          <label className="form-check-label inline-block text-gray-800" for="inlineRadio20">No</label>
                         </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div className="mb-6 grid grid-cols-3 gap-4">
-                    <label htmlFor="item">Item</label>
-                    <input type="text" id="item" className="form-control w-full rounded"
-                      placeholder="Amount"
-                    />
-                  </div>
+                    <div className="mb-6 grid grid-cols-3 gap-4">
+                      <label className="font-bold" htmlFor="businessincome">Total Business Income:</label>
+                      <p className="font-bold" id="businessincome">NGN 0.00</p>
+                    </div>
 
+                    <div>
+                      <p className="font-bold">Expenses</p>
+                      <div className="mb-6 grid grid-cols-3 gap-4">
+                        <label htmlFor="expenses">How would you like to record your expenses?</label>
+                        <div className="flex">
+                          <div className="form-check form-check-inline">
+                            <input className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio1" />
+                            <label className="form-check-label inline-block text-gray-800" for="inlineRadio10">Total value</label>
+                          </div>
 
-                  <div className="mb-6 grid grid-cols-3 gap-4">
-                    <button
-                      style={{ backgroundColor: "#84abeb" }}
-                      className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
-                      type="submit"
-                    >
-                      Add Line
-                    </button>
-                  </div>
-
-                  <div className="mb-6 grid grid-cols-3 gap-4">
-                    <label className="font-bold" htmlFor="businessincome">Net Profit:</label>
-                    <p className="font-bold" id="businessincome">NGN 0.00</p>
-                  </div>
-                  <div className="mb-6 grid grid-cols-3 gap-4">
-                    <label className="font-bold" htmlFor="businessincome">Net Loss:</label>
-                    <p className="font-bold" id="businessincome">NGN 0.00</p>
-                  </div>
-
-                  <div className="mb-6 grid grid-cols-3 gap-4">
-                    <label htmlFor="expenses">Are figures provided provisional or estimated?</label>
-                    <div className="flex">
-                      <div className="form-check form-check-inline">
-                        <input className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio1" />
-                        <label className="form-check-label inline-block text-gray-800" for="inlineRadio10">Yes</label>
-                      </div>
-
-                      <div className="form-check form-check-inline ml-5">
-                        <input className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio2" />
-                        <label className="form-check-label inline-block text-gray-800" for="inlineRadio20">No</label>
+                          <div className="form-check form-check-inline ml-5">
+                            <input className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio2" />
+                            <label className="form-check-label inline-block text-gray-800" for="inlineRadio20">Break down</label>
+                          </div>
+                        </div>
                       </div>
                     </div>
+
+                    <div className="mb-6 grid grid-cols-3 gap-4">
+                      <label htmlFor="item">Item</label>
+                      <input type="text" id="item" className="form-control w-full rounded"
+                        placeholder="Amount"
+                      />
+                    </div>
+
+
+                    <div className="mb-6 grid grid-cols-3 gap-4">
+                      <button
+                        style={{ backgroundColor: "#84abeb" }}
+                        className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
+                        type="submit"
+                      >
+                        Add Line
+                      </button>
+                    </div>
+
+                    <div className="mb-6 grid grid-cols-3 gap-4">
+                      <label className="font-bold" htmlFor="businessincome">Net Profit:</label>
+                      <p className="font-bold" id="businessincome">NGN 0.00</p>
+                    </div>
+                    <div className="mb-6 grid grid-cols-3 gap-4">
+                      <label className="font-bold" htmlFor="businessincome">Net Loss:</label>
+                      <p className="font-bold" id="businessincome">NGN 0.00</p>
+                    </div>
+
+                    <div className="mb-6 grid grid-cols-3 gap-4">
+                      <label htmlFor="expenses">Are figures provided provisional or estimated?</label>
+                      <div className="flex">
+                        <div className="form-check form-check-inline">
+                          <input className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio1" />
+                          <label className="form-check-label inline-block text-gray-800" for="inlineRadio10">Yes</label>
+                        </div>
+
+                        <div className="form-check form-check-inline ml-5">
+                          <input className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio2" />
+                          <label className="form-check-label inline-block text-gray-800" for="inlineRadio20">No</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div className='pb-5'>
+                      <hr />
+                    </div>
                   </div>
+                ))}
+                <button
+                  style={{ backgroundColor: "#84abeb" }}
+                  onClick={addFormFields2}
+                  className="btn w-64 mb-4 btn-default text-white btn-outlined bg-transparent rounded-md"
+                  type="submit"
+                >
+                  Add another business
+                </button>
+
+                <div className="mb-6">
+                  <label htmlFor="comments" className="block">Optional Comments:</label>
+                  <textarea name="" id="comments" cols="40" rows="3" className="rounded " ></textarea>
+                </div>
+                <div className="mb-6 flex justify-between">
                   <button
                     style={{ backgroundColor: "#84abeb" }}
-                    className="btn w-64 mb-4 btn-default text-white btn-outlined bg-transparent rounded-md"
+                    className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
                     type="submit"
                   >
-                    Add another business
+                    Save
                   </button>
-
-                  <div className="mb-6">
-                    <label htmlFor="comments" className="block">Optional Comments:</label>
-                    <textarea name="" id="comments" cols="40" rows="3" className="rounded " ></textarea>
-                  </div>
-                  <div className="mb-6 flex justify-between">
-                    <button
-                      style={{ backgroundColor: "#84abeb" }}
-                      className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
-                      type="submit"
-                    >
-                      Save
-                    </button>
-                    <button onClick={formTog2} className="h-10 w-10 bg-green-100 text-white flex items-center justify-center rounded-full text-lg font-display font-bold">
-                      <a href="">
-                        <FiTriangle
-                          size={15}
-                          className="stroke-current text-green-500"
-                        />
-                      </a>
-                    </button>
-                  </div>
+                  <button onClick={formTog2} className="h-10 w-10 bg-green-100 text-white flex items-center justify-center rounded-full text-lg font-display font-bold">
+                    <a href="">
+                      <FiTriangle
+                        size={15}
+                        className="stroke-current text-green-500"
+                      />
+                    </a>
+                  </button>
                 </div>
               </form>
             </div>
@@ -698,9 +717,9 @@ const Index = () => {
             <div className={`flex justify-center border mb-3 block p-6 rounded-lg bg-white w-full ${togglee3}`}>
               <form>
                 {formValues3.map((element, index) => (
-                  
+
                   <div className="">
-                     <p className="font-bold flex justify-center mb-4"> Add Partner {index + 1}</p>
+                    <p className="font-bold flex justify-center mb-4"> Add Partner {index + 1}</p>
                     <div className="mb-6 grid grid-cols-3 gap-4">
                       <label htmlFor="employername">Partner Name:</label>
                       <input type="text" id="employername" className="form-control w-full rounded"
@@ -728,7 +747,7 @@ const Index = () => {
 
                   </div>
                 ))}
-                
+
                 <div className="mb-6 grid grid-cols-3 gap-4">
                   <button
                     onClick={addFormFields3}
