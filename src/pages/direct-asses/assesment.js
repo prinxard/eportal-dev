@@ -18,6 +18,9 @@ const Index = () => {
   const [togglee11, setToggle11] = useState('hidden')
   const [togglee12, setToggle12] = useState('hidden')
   const [resiToggle, setresToggle] = useState('hidden')
+  const [marriedToggle, setmarriedToggle] = useState('hidden')
+  const [childrenToggle, setchildrenToggle] = useState('hidden')
+  const [servantsToggle, setservantsToggle] = useState('hidden')
   const [form1toggle, setform1toggle] = useState('')
   const [form2toggle, setform2toggle] = useState('')
   const [formValues, setFormValues] = useState([{
@@ -72,7 +75,7 @@ const Index = () => {
   // }
 
   const onChange = e => {
-    let toggleval = ' '
+    let toggleval = ''
     setToggle(toggleval)
   };
 
@@ -88,7 +91,7 @@ const Index = () => {
   };
 
   const onChange3 = e => {
-    let toggleval = ' '
+    let toggleval = ''
     setToggle2(toggleval)
 
   };
@@ -99,7 +102,7 @@ const Index = () => {
 
   };
   const onChange5 = e => {
-    let toggleval = ' '
+    let toggleval = ''
     setToggle3(toggleval)
   };
 
@@ -108,7 +111,7 @@ const Index = () => {
     setToggle3(toggleval)
   };
   const onChange7 = e => {
-    let toggleval = ' '
+    let toggleval = ''
     setToggle4(toggleval)
 
   };
@@ -118,7 +121,7 @@ const Index = () => {
 
   };
   const onChange9 = e => {
-    let toggleval = ' '
+    let toggleval = ''
     setToggle5(toggleval)
   };
 
@@ -127,7 +130,7 @@ const Index = () => {
     setToggle5(toggleval)
   };
   const onChange11 = e => {
-    let toggleval = ' '
+    let toggleval = ''
     setToggle6(toggleval)
 
   };
@@ -137,7 +140,7 @@ const Index = () => {
 
   };
   const onChange13 = e => {
-    let toggleval = ' '
+    let toggleval = ''
     setToggle7(toggleval)
   };
 
@@ -146,7 +149,7 @@ const Index = () => {
     setToggle7(toggleval)
   };
   const onChange15 = e => {
-    let toggleval = ' '
+    let toggleval = ''
     setToggle8(toggleval)
 
   };
@@ -156,7 +159,7 @@ const Index = () => {
 
   };
   const onChange17 = e => {
-    let toggleval = ' '
+    let toggleval = ''
     setToggle9(toggleval)
   };
 
@@ -165,7 +168,7 @@ const Index = () => {
     setToggle9(toggleval)
   };
   const onChange19 = e => {
-    let toggleval = ' '
+    let toggleval = ''
     setToggle10(toggleval)
 
   };
@@ -175,7 +178,7 @@ const Index = () => {
 
   };
   const onChange21 = e => {
-    let toggleval = ' '
+    let toggleval = ''
     setToggle11(toggleval)
   };
 
@@ -184,7 +187,7 @@ const Index = () => {
     setToggle11(toggleval)
   };
   const onChange23 = e => {
-    let toggleval = ' '
+    let toggleval = ''
     setToggle12(toggleval)
 
   };
@@ -197,6 +200,37 @@ const Index = () => {
   const onresidenceToggleYes = e => {
     let toggleval = 'hidden'
     setresToggle(toggleval)
+
+  };
+
+  const MarriedYes = e => {
+    let toggleval = ''
+    setmarriedToggle(toggleval)
+
+  };
+  const MarriedNo = e => {
+    let toggleval = 'hidden'
+    setmarriedToggle(toggleval)
+
+  };
+  const childrenYes = e => {
+    let toggleval = ''
+    setchildrenToggle(toggleval)
+
+  };
+  const childrenNo = e => {
+    let toggleval = 'hidden'
+    setchildrenToggle(toggleval)
+
+  };
+  const servantsYes = e => {
+    let toggleval = ''
+    setservantsToggle(toggleval)
+
+  };
+  const servantsNo = e => {
+    let toggleval = 'hidden'
+    setservantsToggle(toggleval)
 
   };
 
@@ -321,20 +355,174 @@ const Index = () => {
             </div>
           </div>
 
+        </form>
+      </div>
+
+      <div className="block p-6 rounded-lg bg-white w-full">
+        <form action="">
           <div className="grid grid-cols-3 gap-4">
             <div className="form-group mb-6">
-              <p>Married ?</p>
+              <p>Are you Married ?</p>
+            </div>
+            <div className="flex">
+              <div className="form-check form-check-inline">
+                <input onClick={MarriedYes} className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
+                <label className="form-check-label inline-block text-gray-800" for="inlineRadio10">Yes</label>
+              </div>
+
+              <div className="form-check form-check-inline ml-5">
+                <input onClick={MarriedNo} className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
+                <label className="form-check-label inline-block text-gray-800" for="inlineRadio20">No</label>
+              </div>
             </div>
 
-            <div className="form-check form-check-inline">
-              <input className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
-              <label className="form-check-label inline-block text-gray-800" for="inlineRadio10">Yes</label>
+          </div>
+          <div className={`grid grid-cols-3 gap-4 ${marriedToggle}`}>
+            <div className="form-group mb-6">
+              <input type="text" className="form-control w-full rounded"
+                placeholder="Name of spouse in full" />
             </div>
 
-            <div className="form-check form-check-inline ml-5">
-              <input className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
-              <label className="form-check-label inline-block text-gray-800" for="inlineRadio20">No</label>
+            <div className="form-group mb-6">
+              <input type="date" className="form-control w-full rounded"
+                placeholder="Date of birth" />
             </div>
+            <div className="form-group mb-6">
+              <input type="text" className="form-control w-full rounded"
+                placeholder="Employer/Business of spouse" />
+            </div>
+            <div className="form-group mb-6">
+              <input type="text" className="form-control w-full rounded"
+                placeholder="Occupation" />
+            </div>
+            <div className="form-group mb-6">
+              <input type="text" className="form-control w-full rounded"
+                placeholder="Employer's/business address of spouse" />
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div className="block p-6 rounded-lg bg-white w-full">
+        <form action="">
+          <div className="grid grid-cols-3 gap-4">
+            <div className="form-group mb-6">
+              <p>Do you have children ?</p>
+            </div>
+            <div className="flex">
+              <div className="form-check form-check-inline">
+                <input onClick={childrenYes} className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
+                <label className="form-check-label inline-block text-gray-800" for="inlineRadio10">Yes</label>
+              </div>
+
+              <div className="form-check form-check-inline ml-5">
+                <input onClick={childrenNo} className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
+                <label className="form-check-label inline-block text-gray-800" for="inlineRadio20">No</label>
+              </div>
+            </div>
+
+          </div>
+          <div className={`grid grid-cols-3 gap-4 ${childrenToggle}`}>
+            <div className="form-group mb-6">
+              <input type="text" className="form-control w-full rounded"
+                placeholder="Name of child in full" />
+            </div>
+
+            <div className="form-group mb-6">
+              <input type="date" className="form-control w-full rounded"
+                placeholder="Date of birth" />
+            </div>
+            <div className="form-group mb-6">
+              <input type="text" className="form-control w-full rounded"
+                placeholder="Name of child's school" />
+            </div>
+            <div className="form-group mb-6">
+              <input type="text" className="form-control w-full rounded"
+                placeholder="Address of child's school" />
+            </div>
+            <div className="form-group mb-6">
+              <input type="text" className="form-control w-full rounded"
+                placeholder="Child's school fees per session" />
+            </div>
+            <div className="form-group mb-6">
+              <input type="text" className="form-control w-full rounded"
+                placeholder="Child's income in own right" />
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div className="block p-6 rounded-lg bg-white w-full">
+        <form action="">
+          <div className="grid grid-cols-3 gap-4">
+            <div className="form-group mb-6">
+              <p>Do you have domestic servants ?</p>
+            </div>
+            <div className="flex">
+              <div className="form-check form-check-inline">
+                <input onClick={servantsYes} className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
+                <label className="form-check-label inline-block text-gray-800" for="inlineRadio10">Yes</label>
+              </div>
+
+              <div className="form-check form-check-inline ml-5">
+                <input onClick={servantsNo} className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
+                <label className="form-check-label inline-block text-gray-800" for="inlineRadio20">No</label>
+              </div>
+            </div>
+
+          </div>
+          <div className={`grid grid-cols-3 gap-4 ${servantsToggle}`}>
+            <div className="form-group mb-6">
+            <select className="form-select w-full" name="" id="typeofbusiness">
+                <option selected>Mr/Mrs</option>
+                <option value="1">Mr</option>
+                <option value="2">Mrs</option>
+                
+              </select>
+            </div>
+
+            <div className="form-group mb-6">
+              <input type="text" className="form-control w-full rounded"
+                placeholder="Full name" />
+            </div>
+            <div className="form-group mb-6">
+              <input type="text" className="form-control w-full rounded"
+                placeholder="House/plot no" />
+            </div>
+            <div className="form-group mb-6">
+              <input type="text" className="form-control w-full rounded"
+                placeholder="Street" />
+            </div>
+            <div className="form-group mb-6">
+              <input type="text" className="form-control w-full rounded"
+                placeholder="Town/Area" />
+            </div>
+            <div className="form-group mb-6">
+              <input type="text" className="form-control w-full rounded"
+                placeholder="LGA/LCDA" />
+            </div>
+            <div className="form-group mb-6">
+              <input type="text" className="form-control w-full rounded"
+                placeholder="State" />
+            </div>
+            <div className="form-group mb-6">
+              <input type="text" className="form-control w-full rounded"
+                placeholder="Amount paid (Annual)" />
+            </div>
+
+            <div className="flex justify-between">
+              <div className="form-check form-check-inline ">
+                <input  className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
+                <label className="form-check-label  text-gray-800" for="inlineRadio10">Paid by employer</label>
+              </div>
+
+              <div className="form-check form-check-inline ml-5">
+                <input  className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
+                <label className="form-check-label  text-gray-800" for="inlineRadio20">Paid by self</label>
+              </div>
+            </div>
+
+          
           </div>
         </form>
       </div>
@@ -534,7 +722,7 @@ const Index = () => {
               <form>
                 {formValues2.map((element, index) => (
                   <div>
-                     <p className="font-bold flex justify-center mb-4"> Add self Employment {index + 1}</p>
+                    <p className="font-bold flex justify-center mb-4"> Add self Employment {index + 1}</p>
                     <div className="mb-6 grid grid-cols-3 gap-4">
                       <label htmlFor="typeofbusiness">Type of business:</label>
                       <select className="form-select" name="" id="typeofbusiness">
