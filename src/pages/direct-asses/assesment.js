@@ -3,6 +3,7 @@ import SectionTitle from '../../components/section-title';
 import { FiArrowUp, FiTriangle } from 'react-icons/fi';
 
 import { useState } from 'react'
+import { SelectAnnual } from '../../components/forms/selects';
 
 const Index = () => {
   const [toggleel, setToggle] = useState('hidden')
@@ -352,7 +353,18 @@ const Index = () => {
 
   return (
     <>
-      <SectionTitle title="Applicable during the year ended 31st December 2021" />
+      <div className="flex justify-start">
+        <div className="mr-2">
+          <SectionTitle title="Applicable during the year ended 31st December" />
+        </div>
+        <SelectAnnual
+          // label="Select Year"
+          // required
+          // ref={register()}
+          name="year"
+        />
+      </div>
+
       <div className="block p-6 rounded-lg bg-white w-full">
         <p className="mb-3 font-bold">Taxpayer Information</p>
         <form>
