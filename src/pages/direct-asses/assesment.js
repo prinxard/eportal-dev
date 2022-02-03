@@ -366,7 +366,11 @@ const Index = () => {
       </div>
 
       <div className="block p-6 rounded-lg bg-white w-full">
-        <p className="mb-3 font-bold">Taxpayer Information</p>
+        <div className="flex">
+        <h6 className="p-2">Taxpayer Information</h6>
+          <a href="" className="text-blue-600 self-center">Edit</a>
+        </div>
+        <p className="mb-3 font-bold"></p>
         <form>
           <div className="grid grid-cols-3 gap-4">
             <div className="mb-6">
@@ -393,6 +397,94 @@ const Index = () => {
             <div className="form-group mb-6">
               <input type="text" className="form-control w-full rounded"
                 placeholder="Date of birth" />
+            </div>
+            <div className="form-group mb-6">
+              <input type="text" className="form-control w-full rounded"
+                placeholder="Phone number" />
+            </div>
+          </div>
+          <div className="grid grid-cols-3 gap-4">
+            <div className="form-group mb-6">
+              <select className="form-select w-full" name="" id="typeofbusiness">
+                <option selected>Tax Office</option>
+                <option value="1">Office 1</option>
+                <option value="2">Office 2</option>
+              </select>
+            </div>
+
+            <div className="form-group mb-6">
+              <input type="text" className="form-control w-full rounded"
+                placeholder="Email" />
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div className="block p-6 rounded-lg bg-white w-full">
+        <div className="flex">
+        <h6 className="p-2">Current Residential address</h6>
+        </div>
+        <form>
+          <div className="grid grid-cols-3 gap-4">
+            <div className="mb-6">
+              <input type="text" className="form-control w-full rounded"
+                placeholder="House/Plot No" />
+            </div>
+
+            <div className="form-group mb-6">
+              <input type="text" className="form-control w-full rounded"
+                placeholder="Street" />
+            </div>
+            <div className="form-group mb-6">
+              <input type="text" className="form-control w-full rounded"
+                placeholder="Town/Area" />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-3 gap-4">
+            <div className="form-group mb-6">
+              <input type="text" className="form-control w-full rounded"
+                placeholder="LGA" />
+            </div>
+
+            <div className="form-check form-check-inline">
+              <select className="form-select w-full" name="" id="typeofbusiness">
+                <option selected>Type of Residence</option>
+                <option value="1">Bungalow</option>
+                <option value="2">Penthouse</option>
+                <option value="3">Mansion</option>
+                <option value="3">Apartment or Flat</option>
+                <option value="3">Terraced house</option>
+                <option value="3">Duplex</option>
+                <option value="3">Traditional house</option>
+              </select>
+            </div>
+
+            <div className="form-check form-check-inline ml-5">
+              <p>Do you own your place of residence?</p>
+              <div className="flex">
+                <div className="form-check form-check-inline">
+                  <input onChange={onresidenceToggleYes} className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio1" />
+                  <label className="form-check-label inline-block text-gray-800" for="inlineRadio10">Owner</label>
+                </div>
+
+                <div className="form-check form-check-inline ml-5">
+                  <input onChange={onresidenceToggleNo} className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio2" />
+                  <label className="form-check-label inline-block text-gray-800" for="inlineRadio20">Rented</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className={`grid grid-cols-3 gap-4 ${resiToggle}`}>
+            <div className="form-group mb-6">
+              <input type="text" className="form-control w-full rounded"
+                placeholder="Annual rent" />
+            </div>
+
+            <div className="form-group mb-6">
+              <input type="text" className="form-control w-full rounded"
+                placeholder="Name of owner" />
             </div>
             <div className="form-group mb-6">
               <input type="text" className="form-control w-full rounded"
@@ -501,7 +593,7 @@ const Index = () => {
         <form action="">
           <div className="grid grid-cols-3 gap-4">
             <div className="form-group mb-6">
-              <p>Do you have domestic servants ?</p>
+              <p>Do you have domestic Staff ?</p>
             </div>
             <div className="flex">
               <div className="form-check form-check-inline">
@@ -565,84 +657,11 @@ const Index = () => {
                 <label className="form-check-label  text-gray-800" for="inlineRadio20">Paid by self</label>
               </div>
             </div>
-
-
           </div>
         </form>
       </div>
 
-      <div className="block p-6 rounded-lg bg-white w-full">
-        <div className="flex">
-          <p className="mb-3 font-bold pr-3">Current Residential address</p>
-          <a href="" className="text-blue-600">Edit</a>
-        </div>
 
-        <form>
-          <div className="grid grid-cols-3 gap-4">
-            <div className="mb-6">
-              <input type="text" className="form-control w-full rounded"
-                placeholder="House/Plot No" />
-            </div>
-
-            <div className="form-group mb-6">
-              <input type="text" className="form-control w-full rounded"
-                placeholder="Street" />
-            </div>
-            <div className="form-group mb-6">
-              <input type="text" className="form-control w-full rounded"
-                placeholder="Town/Area" />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-3 gap-4">
-            <div className="form-group mb-6">
-              <input type="text" className="form-control w-full rounded"
-                placeholder="LGA" />
-            </div>
-
-            <div className="form-check form-check-inline">
-              <select className="form-select w-full" name="" id="typeofbusiness">
-                <option selected>Type of Residence</option>
-                <option value="1">Apartment</option>
-                <option value="2">Town house</option>
-                <option value="3">Standalone house</option>
-              </select>
-            </div>
-
-            <div className="form-check form-check-inline ml-5">
-              <p>Do you own your place of residence?</p>
-              <div className="flex">
-                <div className="form-check form-check-inline">
-                  <input onChange={onresidenceToggleYes} className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio1" />
-                  <label className="form-check-label inline-block text-gray-800" for="inlineRadio10">Owner</label>
-                </div>
-
-                <div className="form-check form-check-inline ml-5">
-                  <input onChange={onresidenceToggleNo} className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio2" />
-                  <label className="form-check-label inline-block text-gray-800" for="inlineRadio20">Rented</label>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className={`grid grid-cols-3 gap-4 ${resiToggle}`}>
-            <div className="form-group mb-6">
-              <input type="text" className="form-control w-full rounded"
-                placeholder="Annual rent" />
-            </div>
-
-            <div className="form-group mb-6">
-              <input type="text" className="form-control w-full rounded"
-                placeholder="Name of owner" />
-            </div>
-            <div className="form-group mb-6">
-              <input type="text" className="form-control w-full rounded"
-                placeholder="Phone number" />
-            </div>
-          </div>
-
-        </form>
-      </div>
 
       <h6 className="p-2">Income details</h6>
 
@@ -650,7 +669,7 @@ const Index = () => {
         <div className="p-10" >
           <div >
             <div className="flex justify-between mb-5 ">
-              <p>Were you employed ? </p>
+              <p>Are you employed ? </p>
               <div className="flex">
                 <div className="form-check form-check-inline">
                   <input onClick={onChange} className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio1" />
@@ -742,7 +761,7 @@ const Index = () => {
             <div>
 
               <div className="flex justify-between mb-5">
-                <p>Were you self employed ? </p>
+                <p>Are you self employed ? </p>
 
                 <div className="flex">
 
@@ -809,7 +828,7 @@ const Index = () => {
                     </div>
 
                     <div className="mb-6 grid grid-cols-3 gap-4">
-                      <label htmlFor="cashbases">Did you use cash basis, money actually received and paid out, to calculate your income expense ?</label>
+                      <label htmlFor="cashbases">Do you use cash basis, money actually received and paid out, to calculate your income expense ?</label>
                       <div className="flex">
                         <div className="form-check form-check-inline">
                           <input className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio1" />
@@ -928,7 +947,7 @@ const Index = () => {
 
             <div className="flex justify-between mb-5">
 
-              <p>Were you in a patnership ? </p>
+              <p>Are you in a patnership ? </p>
 
 
               <div className="flex">
@@ -1009,7 +1028,7 @@ const Index = () => {
 
             <div className="flex justify-between mb-5">
 
-              <p>Did you receive income on rent ? </p>
+              <p>Do you receive income on rent ? </p>
 
               <div className="flex">
 
@@ -1105,7 +1124,7 @@ const Index = () => {
 
             <div className="flex justify-between mb-5">
 
-              <p>Did you receive any bank interest ? </p>
+              <p>Do you receive any bank interest ? </p>
 
 
               <div className="flex">
@@ -1182,7 +1201,7 @@ const Index = () => {
 
             <div className="flex justify-between mb-5">
 
-              <p>Did you receive any bank dividends from a Nigerian Company ? </p>
+              <p>Do you receive any bank dividends from a Nigerian Company ? </p>
 
               <div className="flex">
 
@@ -1239,7 +1258,7 @@ const Index = () => {
 
             <div className="flex justify-between mb-5">
 
-              <p>Did you receive Pension ? </p>
+              <p>Do you receive Pension ? </p>
 
               <div className="flex">
                 <div className="form-check form-check-inline">
@@ -1292,7 +1311,7 @@ const Index = () => {
 
             <div className="flex justify-between mb-5">
 
-              <p>Did you make profit on sale of asset ? </p>
+              <p>Do you make profit on sale of asset ? </p>
 
               <div className="flex">
 
@@ -1379,7 +1398,7 @@ const Index = () => {
 
             <div className="flex justify-between mb-5">
 
-              <p>Did you receive any income from sources outside Nigeria ? </p>
+              <p>Do you receive any income from sources outside Nigeria ? </p>
 
               <div className="flex">
 
@@ -1450,7 +1469,7 @@ const Index = () => {
 
           <div className="flex justify-between mb-5">
 
-            <p>Did you contribute towards pension ? </p>
+            <p>Do you contribute towards pension ? </p>
 
 
             <div className="flex">
@@ -1513,7 +1532,7 @@ const Index = () => {
           </div>
 
           <div className="flex justify-between mb-5">
-            <p>Did you contribute towards Life Asurrance ? </p>
+            <p>Do you contribute towards Life Asurrance ? </p>
             <div className="flex">
 
               <div className="form-check form-check-inline flex ustify-evenly">
@@ -1574,7 +1593,7 @@ const Index = () => {
           </div>
 
           <div className="flex justify-between mb-5">
-            <p>Did you contribute towards NHIS ? </p>
+            <p>Do you contribute towards NHIS ? </p>
             <div className="flex">
 
               <div className="form-check form-check-inline flex ustify-evenly">
@@ -1635,14 +1654,14 @@ const Index = () => {
           </div>
         </div>
       </Widget>
-      <h6 className="p-2">Other asset</h6>
+      <h6 className="p-2">Other Asset</h6>
 
       <Widget>
         <div className="p-10">
 
           <div className="flex justify-between mb-5">
 
-            <p>Did you own a vehicle ? </p>
+            <p>Do you own a Vehicle ? </p>
 
 
             <div className="flex">
@@ -1715,7 +1734,7 @@ const Index = () => {
 
           <div className="flex justify-between mb-5">
 
-            <p>Did you own a house ? </p>
+            <p>Do you own a Landed Property ? </p>
 
 
             <div className="flex">
@@ -1735,19 +1754,32 @@ const Index = () => {
             <form>
               <div className="">
                 <div className="mb-6 grid grid-cols-3 gap-4">
-                  <label htmlFor="employername">Locality:</label>
+                  <label htmlFor="employername">Address:</label>
                   <input type="text" id="employername" className="form-control w-full rounded"
                   />
                 </div>
+                <div className="mb-6 grid grid-cols-3 gap-4">
+                <label htmlFor="employername">Type of property:</label>
+                  <select className="form-select w-full" name="" id="typeofbusiness">
+                    <option selected>Select property type</option>
+                    <option value="1">Bungalow</option>
+                    <option value="2">Penthouse</option>
+                    <option value="3">Mansion</option>
+                    <option value="3">Apartment or Flat</option>
+                    <option value="3">Terraced house</option>
+                    <option value="3">Duplex</option>
+                    <option value="3">Traditional house</option>
+                  </select>
+                </div>
 
                 <div className="mb-6 grid grid-cols-3 gap-4">
-                  <label htmlFor="employername">Date of completion:</label>
+                  <label htmlFor="employername">Date of completion/acquisition:</label>
                   <input type="date" id="employername" className="form-control w-full rounded"
                   />
                 </div>
 
                 <div className="mb-6 grid grid-cols-3 gap-4">
-                  <label htmlFor="employername">Cost of Construction:</label>
+                  <label htmlFor="employername">Cost of construction/acquisition:</label>
                   <input type="text" id="employername" className="form-control w-full rounded"
                   />
                 </div>
@@ -1767,7 +1799,7 @@ const Index = () => {
 
           <div className="flex justify-between mb-5">
 
-            <p>Did you own a farm ? </p>
+            <p>Do you own a Farm Land ? </p>
 
 
             <div className="flex">
@@ -1787,19 +1819,19 @@ const Index = () => {
             <form>
               <div className="">
                 <div className="mb-6 grid grid-cols-3 gap-4">
-                  <label htmlFor="employername">Locality:</label>
+                  <label htmlFor="employername">Address:</label>
                   <input type="text" id="employername" className="form-control w-full rounded"
                   />
                 </div>
 
                 <div className="mb-6 grid grid-cols-3 gap-4">
-                  <label htmlFor="employername">Date of completion:</label>
+                  <label htmlFor="employername">Date of acquisition:</label>
                   <input type="date" id="employername" className="form-control w-full rounded"
                   />
                 </div>
 
                 <div className="mb-6 grid grid-cols-3 gap-4">
-                  <label htmlFor="employername">Cost of Construction:</label>
+                  <label htmlFor="employername">Cost of Land:</label>
                   <input type="text" id="employername" className="form-control w-full rounded"
                   />
                 </div>
