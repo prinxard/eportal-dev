@@ -17,6 +17,9 @@ const Index = () => {
   const [togglee10, setToggle10] = useState('hidden')
   const [togglee11, setToggle11] = useState('hidden')
   const [togglee12, setToggle12] = useState('hidden')
+  const [togglee13, setToggle13] = useState('hidden')
+  const [togglee14, setToggle14] = useState('hidden')
+  const [togglee15, setToggle15] = useState('hidden')
   const [resiToggle, setresToggle] = useState('hidden')
   const [marriedToggle, setmarriedToggle] = useState('hidden')
   const [childrenToggle, setchildrenToggle] = useState('hidden')
@@ -194,6 +197,36 @@ const Index = () => {
   const onChange24 = e => {
     let toggleval = 'hidden'
     setToggle12(toggleval)
+
+  };
+  const onChange25 = e => {
+    let toggleval = ''
+    setToggle13(toggleval)
+
+  };
+  const onChange26 = e => {
+    let toggleval = 'hidden'
+    setToggle13(toggleval)
+
+  };
+  const onChange27 = e => {
+    let toggleval = ''
+    setToggle14(toggleval)
+
+  };
+  const onChange28 = e => {
+    let toggleval = 'hidden'
+    setToggle14(toggleval)
+
+  };
+  const onChange29 = e => {
+    let toggleval = ''
+    setToggle15(toggleval)
+
+  };
+  const onChange30 = e => {
+    let toggleval = 'hidden'
+    setToggle15(toggleval)
 
   };
 
@@ -473,11 +506,10 @@ const Index = () => {
           </div>
           <div className={`grid grid-cols-3 gap-4 ${servantsToggle}`}>
             <div className="form-group mb-6">
-            <select className="form-select w-full" name="" id="typeofbusiness">
+              <select className="form-select w-full" name="" id="typeofbusiness">
                 <option selected>Mr/Mrs</option>
                 <option value="1">Mr</option>
                 <option value="2">Mrs</option>
-                
               </select>
             </div>
 
@@ -512,17 +544,17 @@ const Index = () => {
 
             <div className="flex justify-between">
               <div className="form-check form-check-inline ">
-                <input  className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
+                <input className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
                 <label className="form-check-label  text-gray-800" for="inlineRadio10">Paid by employer</label>
               </div>
 
               <div className="form-check form-check-inline ml-5">
-                <input  className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
+                <input className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
                 <label className="form-check-label  text-gray-800" for="inlineRadio20">Paid by self</label>
               </div>
             </div>
 
-          
+
           </div>
         </form>
       </div>
@@ -1589,6 +1621,195 @@ const Index = () => {
               </div>
             </form>
           </div>
+        </div>
+      </Widget>
+      <h6 className="p-2">Other asset</h6>
+
+      <Widget>
+        <div className="p-10">
+
+          <div className="flex justify-between mb-5">
+
+            <p>Did you own a vehicle ? </p>
+
+
+            <div className="flex">
+              <div className="form-check form-check-inline flex ustify-evenly">
+                <input onChange={onChange25} className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions10" id="inlineRadio1" value="option1" />
+                <label className="form-check-label inline-block text-gray-800" for="inlineRadio10">Yes</label>
+              </div>
+
+              <div className="form-check form-check-inline ml-5">
+                <input onChange={onChange26} className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions10" id="inlineRadio2" value="option2" />
+                <label className="form-check-label inline-block text-gray-800" for="inlineRadio20">No</label>
+              </div>
+            </div>
+          </div>
+
+          <div className={`flex justify-start border mb-3 block p-6 rounded-lg bg-white w-full ${togglee13}`}>
+            <form>
+              <div className="">
+                <div className="mb-6 grid grid-cols-3 gap-4">
+                  <label htmlFor="employername">Date of purchase:</label>
+                  <input type="date" id="employername" className="form-control w-full rounded"
+                  />
+                </div>
+
+                <div className="mb-6 grid grid-cols-3 gap-4">
+                  <label htmlFor="employername">Cost:</label>
+                  <input type="text" id="employername" className="form-control w-full rounded"
+                  />
+                </div>
+
+                <div className="mb-6 grid grid-cols-3 gap-4">
+                  <label htmlFor="employername">Brand:</label>
+                  <select className="Select Brand" name="" id="typeofbusiness">
+                    <option selected>Honda</option>
+                    <option value="1">Toyota</option>
+                    <option value="2">Benz</option>
+                  </select>
+                </div>
+
+                <div className="mb-6 grid grid-cols-3 gap-4">
+                  <label htmlFor="employername">Model:</label>
+                  <select className="Select Brand" name="" id="typeofbusiness">
+                    <option selected>Honda</option>
+                    <option value="1">Toyota</option>
+                    <option value="2">Benz</option>
+                  </select>
+                </div>
+
+                <div className="mb-6 grid grid-cols-3 gap-4">
+                  <label htmlFor="employername">Year:</label>
+                  <select className="Select Brand" name="" id="typeofbusiness">
+                    <option selected>2021</option>
+                    <option value="1">2022</option>
+                    <option value="2">2023</option>
+                  </select>
+                </div>
+
+                <div className="mb-6 flex justify-between">
+                  <button
+                    style={{ backgroundColor: "#84abeb" }}
+                    className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
+                    type="submit"
+                  >
+                    Save
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div className="flex justify-between mb-5">
+
+            <p>Did you own a house ? </p>
+
+
+            <div className="flex">
+              <div className="form-check form-check-inline flex ustify-evenly">
+                <input onChange={onChange27} className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions10" id="inlineRadio1" value="option1" />
+                <label className="form-check-label inline-block text-gray-800" for="inlineRadio10">Yes</label>
+              </div>
+
+              <div className="form-check form-check-inline ml-5">
+                <input onChange={onChange28} className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions10" id="inlineRadio2" value="option2" />
+                <label className="form-check-label inline-block text-gray-800" for="inlineRadio20">No</label>
+              </div>
+            </div>
+          </div>
+
+          <div className={`flex justify-start border mb-3 block p-6 rounded-lg bg-white w-full ${togglee14}`}>
+            <form>
+              <div className="">
+                <div className="mb-6 grid grid-cols-3 gap-4">
+                  <label htmlFor="employername">Locality:</label>
+                  <input type="text" id="employername" className="form-control w-full rounded"
+                  />
+                </div>
+
+                <div className="mb-6 grid grid-cols-3 gap-4">
+                  <label htmlFor="employername">Date of completion:</label>
+                  <input type="date" id="employername" className="form-control w-full rounded"
+                  />
+                </div>
+
+                <div className="mb-6 grid grid-cols-3 gap-4">
+                  <label htmlFor="employername">Cost of Construction:</label>
+                  <input type="text" id="employername" className="form-control w-full rounded"
+                  />
+                </div>
+
+                <div className="mb-6 flex justify-between">
+                  <button
+                    style={{ backgroundColor: "#84abeb" }}
+                    className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
+                    type="submit"
+                  >
+                    Save
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div className="flex justify-between mb-5">
+
+            <p>Did you own a farm ? </p>
+
+
+            <div className="flex">
+              <div className="form-check form-check-inline flex ustify-evenly">
+                <input onChange={onChange29} className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions10" id="inlineRadio1" value="option1" />
+                <label className="form-check-label inline-block text-gray-800" for="inlineRadio10">Yes</label>
+              </div>
+
+              <div className="form-check form-check-inline ml-5">
+                <input onChange={onChange30} className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions10" id="inlineRadio2" value="option2" />
+                <label className="form-check-label inline-block text-gray-800" for="inlineRadio20">No</label>
+              </div>
+            </div>
+          </div>
+
+          <div className={`flex justify-start border mb-3 block p-6 rounded-lg bg-white w-full ${togglee15}`}>
+            <form>
+              <div className="">
+                <div className="mb-6 grid grid-cols-3 gap-4">
+                  <label htmlFor="employername">Locality:</label>
+                  <input type="text" id="employername" className="form-control w-full rounded"
+                  />
+                </div>
+
+                <div className="mb-6 grid grid-cols-3 gap-4">
+                  <label htmlFor="employername">Date of completion:</label>
+                  <input type="date" id="employername" className="form-control w-full rounded"
+                  />
+                </div>
+
+                <div className="mb-6 grid grid-cols-3 gap-4">
+                  <label htmlFor="employername">Cost of Construction:</label>
+                  <input type="text" id="employername" className="form-control w-full rounded"
+                  />
+                </div>
+                <div className="mb-6 grid grid-cols-3 gap-4">
+                  <label htmlFor="employername">Cost of Produce:</label>
+                  <input type="text" id="employername" className="form-control w-full rounded"
+                  />
+                </div>
+
+                <div className="mb-6 flex justify-between">
+                  <button
+                    style={{ backgroundColor: "#84abeb" }}
+                    className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
+                    type="submit"
+                  >
+                    Save
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+
           <div className="mb-6 flex justify-center">
             <button
               style={{ backgroundColor: "#84abeb" }}
