@@ -1,11 +1,53 @@
-import Widget from '../../components/widget'
-import SectionTitle from '../../components/section-title';
-import { FiArrowUp, FiTriangle } from 'react-icons/fi';
+import Widget from "../widget";
+import { formatNumber } from "../../functions/numbers";
+import * as Icons from '../Icons/index';
+import Widget1 from "../dashboard/widget-1";
+import dateformat from "dateformat";
+import Link from 'next/link';
+import { SelectAnnual } from "../forms/selects";
+import SectionTitle from "../section-title";
+import { useState } from "react";
+import { FiTriangle } from "react-icons/fi";
 
-import { useState } from 'react'
-import { SelectAnnual } from '../../components/forms/selects';
+export const StartAssessment = () => {
 
-const Index = () => {
+  return (
+    <>
+      <Widget>
+        <div className="flex justify-around">
+          <div>
+            <label className="block" htmlFor="kgtin">Enter Taxpayer KGTIN</label>
+            <input type="text" placeholder="Enter KGTIN" />
+          </div>
+          <SelectAnnual
+            label="Select Year"
+            // required
+            // ref={register()}
+            name="year"
+          />
+          {/* <Link href={`/direct-asses/123`}>
+            <a className="hover:text-blue-500">
+              Trysend
+            </a>
+          </Link> */}
+        </div>
+        <div className="flex justify-end m-10">
+          <button
+            style={{ backgroundColor: "#84abeb" }}
+            className="btn btn-default text-white btn-outlined bg-transparent rounded-md mx-2"
+            type="submit"
+          >
+            Start Assessment
+          </button>
+        </div>
+      </Widget>
+    </>
+  );
+};
+
+
+export const StartSingleIndividualAssessment = () => {
+
   const [toggleel, setToggle] = useState('hidden')
   const [togglee2, setToggle2] = useState('hidden')
   const [togglee3, setToggle3] = useState('hidden')
@@ -349,8 +391,6 @@ const Index = () => {
 
 
 
-
-
   return (
     <>
       <div className="flex justify-start">
@@ -367,7 +407,7 @@ const Index = () => {
 
       <div className="block p-6 rounded-lg bg-white w-full">
         <div className="flex">
-        <h6 className="p-2">Taxpayer Information</h6>
+          <h6 className="p-2">Taxpayer Information</h6>
           <a href="" className="text-blue-600 self-center">Edit</a>
         </div>
         <p className="mb-3 font-bold"></p>
@@ -422,7 +462,7 @@ const Index = () => {
 
       <div className="block p-6 rounded-lg bg-white w-full">
         <div className="flex">
-        <h6 className="p-2">Current Residential address</h6>
+          <h6 className="p-2">Current Residential address</h6>
         </div>
         <form>
           <div className="grid grid-cols-3 gap-4">
@@ -789,10 +829,142 @@ const Index = () => {
                     <div className="mb-6 grid grid-cols-3 gap-4">
                       <label htmlFor="typeofbusiness">Type of business:</label>
                       <select className="form-select" name="" id="typeofbusiness">
-                        <option selected>Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option selected>Select Business </option>
+                        <option value="1">Agro Allied Products</option>
+                        <option value="2">Aircondition Repairer</option>
+                        <option value="3">Aluminum Doors & Windows</option>
+                        <option value="3">Animal Feed Maker</option>
+                        <option value="3">Architechtural Design</option>
+                        <option value="3">Architect</option>
+                        <option value="3">Artist And Song-Writer</option>
+                        <option value="3">Baby Wear</option>
+                        <option value="3">Curtain & Interior Decoration</option>
+                        <option value="3">Cyber Cafe Operator</option>
+                        <option value="3">Dealers In Mattress/Foams</option>
+                        <option value="3">Djs Entertainment</option>
+                        <option value="3">Doors Seller</option>
+                        <option value="3">Drama Group</option>
+                        <option value="3">Electrical Parts & Fitting</option>
+                        <option value="3">Electrician</option>
+                        <option value="3">Electronics Dealer</option>
+                        <option value="3">Engine Oil/ Kerosene Seller</option>
+                        <option value="3">Estate Managers/ Agent</option>
+                        <option value="3">Event Centre</option>
+                        <option value="3">Event Planner</option>
+                        <option value="3">Fashion Designer</option>
+                        <option value="3">Films & Cinemas Center</option>
+                        <option value="3">Fish Seller</option>
+                        <option value="3">Fowl Seller</option>
+                        <option value="3">Fruit Seller</option>
+                        <option value="3">Furnishing Materials Seller</option>
+                        <option value="3">Furniture / Furnishing Materials Seller</option>
+                        <option value="3">Furniture Maker</option>
+                        <option value="3">Gas Refilling Seller</option>
+                        <option value="3">Generator Mechanic</option>
+                        <option value="3">Gift Shop</option>
+                        <option value="3">Graphic Arts & Design</option>
+                        <option value="3">Grinding Mill</option>
+                        <option value="3">Guest House</option>
+                        <option value="3">Hairdressers And Barber</option>
+                        <option value="3">Higher Institutions Private</option>
+                        <option value="3">Horticulture / Florist</option>
+                        <option value="3">Hotel Proprietor</option>
+                        <option value="3">Ict/ Computer Accessories</option>
+                        <option value="3">Interior Decorator</option>
+                        <option value="3">Iron Bender</option>
+                        <option value="3">Jewelry Seller</option>
+                        <option value="3">Kerorine Retail Seller</option>
+                        <option value="3">Kiddies Shop And Botique</option>
+                        <option value="3">Laundry (Dry Cleaner)</option>
+                        <option value="3">Law Firm</option>
+                        <option value="3">Leather Carpets (Linoleum)</option>
+                        <option value="3">Liquor|Beer Palour</option>
+                        <option value="3">Mai Shai (Tea Maker)</option>
+                        <option value="3">Mason</option>
+                        <option value="3">Maternity Home</option>
+                        <option value="3">Maternity Private Proprietor</option>
+                        <option value="3">Meat Seller</option>
+                        <option value="3">Meat Seller</option>
+                        <option value="3">Medical Laboratory</option>
+                        <option value="">Mini Supermarket|Supermarket</option>
+                        <option value="">Mobile Phone Dealer</option>
+                        <option value="">Mobile Phone Repairer</option>
+                        <option value="">Mobile Phone Seller</option>
+                        <option value="">Money Lender</option>
+                        <option value=""> Motor Cycle Dealer</option>
+                        <option value="">Motor Cycle Mechanic</option>
+                        <option value="">Motor Cycle Spare Part Dealer </option>
+                        <option value="">Motor Dealer/Seller</option>
+                        <option value="">Motor Spare Part Dealer</option>
+                        <option value="">Motor Vehicle Mechanic</option>
+                        <option value="">Musician</option>
+                        <option value="">Newspaper/Magazine Vendor</option>
+                        <option value="">Optician</option>
+                        <option value="">Other Businesses And Trade</option>
+                        <option value="">Painter And Decorator</option>
+                        <option value="">Paints Dealer</option>
+                        <option value="">Palm Oil Miller</option>
+                        <option value="">Panel Beaters & Sprayer</option>
+                        <option value="">Patent/Propriety Medicine Vendor</option>
+                        <option value="">Petrol Filling Station</option>
+                        <option value="">Pharmaceutical Shop</option>
+                        <option value=""> Phone Accessories</option>
+                        <option value="">Photo Color Laboratorie</option>
+                        <option value="">Photographers / Photo Developer</option>
+                        <option value="">Photographic Materials Shop</option>
+                        <option value="">Plastic Dealer</option>
+                        <option value=""> Plastic/Rubber Seller</option>
+                        <option value="">Plumber</option>
+                        <option value="">Plumbing Material With Water Tanks & Access.</option>
+                        <option value="">Plumbing Materials Only</option>
+                        <option value="">Pool Agent</option>
+                        <option value="">Pool Promoter</option>
+                        <option value="">Pos Operator (Mobile Money)</option>
+                        <option value="">Potter</option>
+                        <option value="">Poultry Farmer</option>
+                        <option value="">Poultry Feed</option>
+                        <option value="">Printer</option>
+                        <option value="">Private Medical Practioner</option>
+                        <option value="">Private N/P School</option>
+                        <option value="">Private Secondary School</option>
+                        <option value="">Produce Buyer</option>
+                        <option value="">Provision Store</option>
+                        <option value="">Pure/Bottle Water Producer</option>
+                        <option value="">Pure/Bottle Water Seller</option>
+                        <option value="">Raw Food Seller</option>
+                        <option value="">Recharge Card Dealer</option>
+                        <option value="">Rental</option>
+                        <option value="">Restaurant</option>
+                        <option>Restaurant (Buka)</option>
+                        <option value="">Re-Wire & Battery Charger opt</option>
+                        <option value="">Road Side Petty Trader</option>
+                        <option value="">Rugs & Carpet</option>
+                        <option value="">Sack Bags Seller</option>
+                        <option value="">Saw Mill</option>
+                        <option value="">School Proprietor</option>
+                        <option value="">Shoe Maker</option>
+                        <option value="">Shoe Seller</option>
+                        <option value="">Shops/Stall</option>
+                        <option value="">Solar Panel</option>
+                        <option value="">Stylist</option>
+                        <option value="">Super Market</option>
+                        <option value="">Tailors/Fashion Designer</option>
+                        <option value="">Thrift Collector</option>
+                        <option value="">Tiler</option>
+                        <option value="">Timber Wood Seller</option>
+                        <option value="">Tomatoes Seller</option>
+                        <option value="">Tuber Dealer</option>
+                        <option value="">Tyre Dealer</option>
+                        <option value="">Video Club</option>
+                        <option value="">Viewing Centre</option>
+                        <option value="">Vulcanizer</option>
+                        <option value="">Weaver</option>
+                        <option value="">Welder</option>
+                        <option value="">Wheel Barrow Quiosk</option>
+                        <option value="">Wine And Beer License Operator</option>
+                        <option value="">Yam Seller</option>
+                        <option value="">Yoghurt Seller</option>
+
                       </select>
                     </div>
 
@@ -1503,7 +1675,7 @@ const Index = () => {
                 </div>
 
                 <div className="mb-6 grid grid-cols-3 gap-4">
-                  <label htmlFor="employername">No:</label>
+                  <label htmlFor="employername">RSA No:</label>
                   <input type="text" id="employername" className="form-control w-full rounded"
                   />
                 </div>
@@ -1755,11 +1927,11 @@ const Index = () => {
               <div className="">
                 <div className="mb-6 grid grid-cols-3 gap-4">
                   <label htmlFor="employername">Address:</label>
-                  <input type="text" id="employername" className="form-control w-full rounded"
+                  <textarea cols="40" rows="2" id="employername" className="form-control w-full rounded"
                   />
                 </div>
                 <div className="mb-6 grid grid-cols-3 gap-4">
-                <label htmlFor="employername">Type of property:</label>
+                  <label htmlFor="employername">Type of property:</label>
                   <select className="form-select w-full" name="" id="typeofbusiness">
                     <option selected>Select property type</option>
                     <option value="1">Bungalow</option>
@@ -1867,5 +2039,4 @@ const Index = () => {
       </Widget>
     </>
   )
-}
-export default Index
+};

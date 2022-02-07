@@ -79,7 +79,7 @@ const initialState = [
               },
               { title: 'Upload Document', url: '/uploads/annualdocs', items: [] },
               { title: 'View document', url: '/view/viewdocuments', items: [] },
-            
+
             ],
           },
           {
@@ -127,17 +127,34 @@ const initialState = [
         items: [],
       },
 
-         {
+      {
         url: '/',
         icon: <Invoice />,
         title: 'DIRECT ASSESSMENT',
         items: [
           {
-            url: '/direct-asses/assesment',
-            title: 'form',
-            items: [],
+            // url: '/direct-asses',
+            title: 'Form A',
+            items: [
+              {
+                url: '/direct-asses',
+                title: 'Create',
+                items: [],
+              },
+              {
+                url: '/',
+                title: 'Pending Application',
+                items: [],
+              },
+              {
+                url: '/',
+                title: 'Completed Application',
+                items: [],
+              },
+            ],
           },
-      
+
+
         ],
       },
 
