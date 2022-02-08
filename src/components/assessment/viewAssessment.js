@@ -1279,14 +1279,16 @@ export const StartSingleIndividualAssessment = () => {
                 <div className="">
                   <div className="mb-6 grid grid-cols-3 gap-4">
                     <label htmlFor="employername">Property Type:</label>
-                    <option selected>Select property type</option>
-                    <option value="1">Bungalow</option>
-                    <option value="2">Penthouse</option>
-                    <option value="3">Mansion</option>
-                    <option value="3">Apartment or Flat</option>
-                    <option value="3">Terraced house</option>
-                    <option value="3">Duplex</option>
-                    <option value="3">Traditional house</option>
+                    <select name="" id="">
+                      <option selected>Select property type</option>
+                      <option value="1">Bungalow</option>
+                      <option value="2">Penthouse</option>
+                      <option value="3">Mansion</option>
+                      <option value="3">Apartment or Flat</option>
+                      <option value="3">Terraced house</option>
+                      <option value="3">Duplex</option>
+                      <option value="3">Traditional house</option>
+                    </select>
                   </div>
 
                   <div className="mb-6 grid grid-cols-3 gap-4">
