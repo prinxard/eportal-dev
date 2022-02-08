@@ -18,6 +18,10 @@ export const StartAssessment = () => {
   const [kgtEnentered, setKgtEentered] = useState('')
   const [validkgtinmessage, Setvalidkgtinmessage] = useState('')
   const [invalidkgtinmessage, Setinvalidkgtinmessage] = useState('')
+  const [disabled, setDisabled] = useState(true);
+  const [validmsg, setvalidmsg] = useState("hidden");
+  const [invalidmsg, setinvalidmsg] = useState("hidden");
+  const [payerDetails, setpayerDetails] = useState("");
 
   const onSubmitform = async data => {
 
@@ -44,9 +48,18 @@ export const StartAssessment = () => {
 
     try {
       let res = await axios.post(`https://rhmapi.bespoque.dev/api/v1/taxpayer/view-individual`, kgtin)
+      let userpayer = res.data.body
+      console.log(userpayer);
       Setvalidkgtinmessage("KGTIN is Valid");
+      setDisabled(false)
+      setvalidmsg('')
+      setinvalidmsg('hidden')
+      console.log("Success!");
     } catch (err) {
-      Setkgtinmessage("Invalid KGTIN");
+      setDisabled(true)
+      setinvalidmsg('')
+      setvalidmsg('hidden')
+      Setinvalidkgtinmessage("Invalid KGTIN");
     }
   };
   return (
@@ -59,14 +72,13 @@ export const StartAssessment = () => {
               <div>
                 <label className="block" htmlFor="kgtin">Enter Taxpayer KGTIN</label>
                 <input onChange={event => setKgtEentered(event.target.value)} type="text" placeholder="Enter KGTIN" />
-                {/* <small className="block hidden">chec</small> <small className="block">chec2</small> */}
+                <small className={`block text-green-600 ${validmsg}`}>{validkgtinmessage}</small><small className={`block text-red-600 ${invalidmsg}`}>{invalidkgtinmessage}</small>
               </div>
               <div className="self-center ml-2">
                 <a
                   onClick={verifiyKGTIN}
                   style={{ backgroundColor: "#84abeb" }}
                   className="btn btn-default text-white btn-outlined bg-transparent rounded-md"
-                // type="submit"
                 >
                   Verify KGTIN
                 </a>
@@ -88,7 +100,7 @@ export const StartAssessment = () => {
                 style={{ backgroundColor: "#84abeb" }}
                 className="btn btn-default text-white btn-outlined bg-transparent rounded-md"
                 type="submit"
-                disabled
+                disabled={disabled}
               >
                 Start Assessment
               </button>

@@ -141,16 +141,16 @@ const initialState = [
                 title: 'Create',
                 items: [],
               },
-              // {
-              //   url: '/',
-              //   title: 'Pending Application',
-              //   items: [],
-              // },
-              // {
-              //   url: '/',
-              //   title: 'Completed Application',
-              //   items: [],
-              // },
+              {
+                url: '/view/pendingdirect',
+                title: 'Pending Application',
+                items: [],
+              },
+              {
+                url: '/view/completeddirect',
+                title: 'Completed Application',
+                items: [],
+              },
             ],
           },
 
