@@ -8,37 +8,92 @@ import { SelectAnnual } from "../forms/selects";
 import SectionTitle from "../section-title";
 import { useState } from "react";
 import { FiTriangle } from "react-icons/fi";
+import { useForm } from "react-hook-form";
+import url from '../../config/url';
+import axios from "axios";
+import setAuthToken from "../../functions/setAuthToken";
 
 export const StartAssessment = () => {
+  const { register, handleSubmit } = useForm();
+  const [kgtEnentered, setKgtEentered] = useState('')
+  const [validkgtinmessage, Setvalidkgtinmessage] = useState('')
+  const [invalidkgtinmessage, Setinvalidkgtinmessage] = useState('')
 
+  const onSubmitform = async data => {
+
+    const year = data.year;
+    console.log(data.year);
+
+
+    try {
+
+
+
+    } catch (err) {
+
+    }
+  };
+
+  setAuthToken();
+  const verifiyKGTIN = async () => {
+    let testkgtin = kgtEnentered
+    let kgtin = {
+      "KGTIN": `${testkgtin}`
+    }
+    console.log(kgtin);
+
+    try {
+      let res = await axios.post(`https://rhmapi.bespoque.dev/api/v1/taxpayer/view-individual`, kgtin)
+      Setvalidkgtinmessage("KGTIN is Valid");
+    } catch (err) {
+      Setkgtinmessage("Invalid KGTIN");
+    }
+  };
   return (
     <>
       <Widget>
-        <div className="flex justify-around">
-          <div>
-            <label className="block" htmlFor="kgtin">Enter Taxpayer KGTIN</label>
-            <input type="text" placeholder="Enter KGTIN" />
-          </div>
-          <SelectAnnual
-            label="Select Year"
-            // required
-            // ref={register()}
-            name="year"
-          />
-          {/* <Link href={`/direct-asses/123`}>
-            <a className="hover:text-blue-500">
-              Trysend
-            </a>
-          </Link> */}
-        </div>
-        <div className="flex justify-end m-10">
-          <button
-            style={{ backgroundColor: "#84abeb" }}
-            className="btn btn-default text-white btn-outlined bg-transparent rounded-md mx-2"
-            type="submit"
-          >
-            Start Assessment
-          </button>
+        <div >
+          <form onSubmit={handleSubmit(onSubmitform)} className="flex justify-around">
+
+            <div className="flex">
+              <div>
+                <label className="block" htmlFor="kgtin">Enter Taxpayer KGTIN</label>
+                <input onChange={event => setKgtEentered(event.target.value)} type="text" placeholder="Enter KGTIN" />
+                {/* <small className="block hidden">chec</small> <small className="block">chec2</small> */}
+              </div>
+              <div className="self-center ml-2">
+                <a
+                  onClick={verifiyKGTIN}
+                  style={{ backgroundColor: "#84abeb" }}
+                  className="btn btn-default text-white btn-outlined bg-transparent rounded-md"
+                // type="submit"
+                >
+                  Verify KGTIN
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <SelectAnnual
+                label="Select Year"
+                required
+                ref={register()}
+                name="year"
+
+              />
+            </div>
+
+            <div className="self-center">
+              <button
+                style={{ backgroundColor: "#84abeb" }}
+                className="btn btn-default text-white btn-outlined bg-transparent rounded-md"
+                type="submit"
+                disabled
+              >
+                Start Assessment
+              </button>
+            </div>
+          </form>
         </div>
       </Widget>
     </>

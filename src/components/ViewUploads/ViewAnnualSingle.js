@@ -28,7 +28,6 @@ const ViewAnnualSingle = () => {
     if (router && router.query) {
       let year = router.query.ref;
       year = `${year}-01-01`
-      console.log(year);
       let yearValue = {
         "year": `${year}`
       }
