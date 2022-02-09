@@ -752,8 +752,20 @@ export const StartSingleIndividualAssessment = ({ payerprop, isFetching }) => {
               <input type="text" className="form-control w-full rounded"
                 placeholder="Employer's/business address of spouse" />
             </div>
+            <div >
+            </div>
+            <div>
+              <button
+                style={{ backgroundColor: "#84abeb" }}
+
+                className="btn w-64 mb-4 btn-default text-white btn-outlined bg-transparent rounded-md"
+                type="submit"
+              >
+                Add Spouse
+              </button></div>
           </div>
         </form>
+
       </div>
 
       <div className="block p-6 rounded-lg bg-white w-full">
@@ -800,6 +812,16 @@ export const StartSingleIndividualAssessment = ({ payerprop, isFetching }) => {
             <div className="form-group mb-6">
               <input type="text" className="form-control w-full rounded"
                 placeholder="Child's income in own right" />
+            </div>
+            <div>
+              <button
+                style={{ backgroundColor: "#84abeb" }}
+
+                className="btn w-64 mb-4 btn-default text-white btn-outlined bg-transparent rounded-md"
+                type="submit"
+              >
+                Add Child
+              </button>
             </div>
           </div>
         </form>
@@ -873,7 +895,18 @@ export const StartSingleIndividualAssessment = ({ payerprop, isFetching }) => {
                 <label className="form-check-label  text-gray-800" for="inlineRadio20">Paid by self</label>
               </div>
             </div>
+            <div>
+              <button
+                style={{ backgroundColor: "#84abeb" }}
+
+                className="btn w-64 mb-4 btn-default text-white btn-outlined bg-transparent rounded-md"
+                type="submit"
+              >
+                Add Domestic Staff
+              </button>
+            </div>
           </div>
+
         </form>
       </div>
 
@@ -1214,7 +1247,10 @@ export const StartSingleIndividualAssessment = ({ payerprop, isFetching }) => {
                     </div>
 
                     <div className="mb-6 grid grid-cols-3 gap-4">
-                      <label htmlFor="item">Item</label>
+                      {/* <label htmlFor="item">Item</label> */}
+                      <input type="text" id="item" className="form-control w-full rounded"
+                        placeholder="Item"
+                      />
                       <input type="text" id="item" className="form-control w-full rounded"
                         placeholder="Amount"
                       />
