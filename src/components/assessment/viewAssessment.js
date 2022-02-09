@@ -29,7 +29,7 @@ export const StartAssessment = () => {
   const [isFetching2, setIsFetching2] = useState(() => false);
 
   const onSubmitform = async data => {
-    let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZXJueW92aWVAZ21haWwuY29tIiwiZ3JvdXBzIjpbMSwyLDMsNSw0XSwiaWF0IjoxNjQ0MzY5MTg1LCJleHAiOjE2NDQ0MDUxODV9.36890eI0sYK2nqDxrUMj-JGtY4t4cLLPl5_M4OK-tR8'
+    let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZXJueW92aWVAZ21haWwuY29tIiwiZ3JvdXBzIjpbMSwyLDMsNSw0XSwiaWF0IjoxNjQ0MzE2MDgyLCJleHAiOjM2MDAwMDAwMTY0NDMxNjEwMH0.Lj3nrnp4qpGIJiG_Jr0WA2A9J0s20HvOcSmLYf3D3r4'
     const userkgtin = kgtEnentered
     const year = data.year;
     console.log(data.year);
@@ -56,7 +56,7 @@ export const StartAssessment = () => {
 
   // setAuthToken();
   const verifiyKGTIN = async () => {
-    let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZXJueW92aWVAZ21haWwuY29tIiwiZ3JvdXBzIjpbMSwyLDMsNSw0XSwiaWF0IjoxNjQ0MzY5MTg1LCJleHAiOjE2NDQ0MDUxODV9.36890eI0sYK2nqDxrUMj-JGtY4t4cLLPl5_M4OK-tR8'
+    let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZXJueW92aWVAZ21haWwuY29tIiwiZ3JvdXBzIjpbMSwyLDMsNSw0XSwiaWF0IjoxNjQ0MzE2MDgyLCJleHAiOjM2MDAwMDAwMTY0NDMxNjEwMH0.Lj3nrnp4qpGIJiG_Jr0WA2A9J0s20HvOcSmLYf3D3r4'
     let testkgtin = kgtEnentered
     let kgtin = {
       "KGTIN": `${testkgtin}`
