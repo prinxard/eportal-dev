@@ -31,7 +31,7 @@ const fields = [
     key: "status",
   },
   {
-    name: "Create Time",
+    name: "Created Time",
     key: "createtime",
   },
 
