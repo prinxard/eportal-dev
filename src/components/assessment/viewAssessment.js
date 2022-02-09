@@ -506,6 +506,7 @@ export const StartSingleIndividualAssessment = ({ payerprop, isFetching }) => {
           <div className="grid grid-cols-3 gap-4">
 
             <div className="">
+              <p>Surname</p>
               {indvData.map((ind, i) => (
                 <input key={i} type="text" className="form-control w-full rounded"
                   value={ind.surname} disabled />
@@ -513,6 +514,7 @@ export const StartSingleIndividualAssessment = ({ payerprop, isFetching }) => {
             </div>
 
             <div className="form-group mb-6">
+              <p>First Name</p>
               {indvData.map((ind, i) => (
                 <input key={i} type="text" className="form-control w-full rounded"
                   value={ind.first_name} disabled />
@@ -520,6 +522,7 @@ export const StartSingleIndividualAssessment = ({ payerprop, isFetching }) => {
             </div>
 
             <div className="form-group mb-6">
+              <p>Middle Name</p>
               {indvData.map((ind, i) => (
                 <input key={i} type="text" className="form-control w-full rounded"
                   value={ind.middle_name} disabled />
@@ -529,6 +532,7 @@ export const StartSingleIndividualAssessment = ({ payerprop, isFetching }) => {
 
           <div className="grid grid-cols-3 gap-4">
             <div className="form-group mb-6">
+              <p>Title</p>
               {indvData.map((ind, i) => (
                 <input key={i} type="text" className="form-control w-full rounded"
                   value={ind.indv_title} disabled />
@@ -536,28 +540,41 @@ export const StartSingleIndividualAssessment = ({ payerprop, isFetching }) => {
             </div>
 
             <div className="form-group mb-6">
+              <p>Date of Birth</p>
               {indvData.map((ind, i) => (
                 <input key={i} type="text" className="form-control w-full rounded"
                   value={ind.birth_date} disabled />
               ))}
             </div>
             <div className="form-group mb-6">
-              <input type="text" className="form-control w-full rounded"
-                placeholder="Phone number" />
+              <p>Phone number</p>
+              {indvData.map((ind, i) => (
+                <input key={i} type="text" className="form-control w-full rounded"
+                  value={ind.phone_number} disabled />
+              ))}
             </div>
           </div>
           <div className="grid grid-cols-3 gap-4">
             <div className="form-group mb-6">
-              <select className="form-select w-full" name="" id="typeofbusiness">
+              {/* <select className="form-select w-full" name="" id="typeofbusiness">
                 <option selected>Tax Office</option>
                 <option value="1">Office 1</option>
                 <option value="2">Office 2</option>
-              </select>
+              </select> */}
+              <p>Tax Office</p>
+              {indvData.map((ind, i) => (
+                <input key={i} type="text" className="form-control w-full rounded"
+                  value={ind.tax_office} disabled />
+              ))}
             </div>
 
             <div className="form-group mb-6">
-              <input type="text" className="form-control w-full rounded"
-                placeholder="Email" />
+              <p>Email</p>
+              {indvData.map((ind, i) => (
+                <input key={i} type="text" className="form-control w-full rounded"
+                  value={ind.email} disabled />
+              ))}
+
             </div>
           </div>
         </form>
@@ -570,29 +587,42 @@ export const StartSingleIndividualAssessment = ({ payerprop, isFetching }) => {
         <form>
           <div className="grid grid-cols-3 gap-4">
             <div className="mb-6">
-              <input type="text" className="form-control w-full rounded"
-                placeholder="House/Plot No" />
+              <p>House No</p>
+              {indvData.map((ind, i) => (
+                <input key={i} type="text" className="form-control w-full rounded"
+                  value={ind.house_no} disabled />
+              ))}
             </div>
 
             <div className="form-group mb-6">
-              <input type="text" className="form-control w-full rounded"
-                placeholder="Street" />
+              <p>Street</p>
+              {indvData.map((ind, i) => (
+                <input key={i} type="text" className="form-control w-full rounded"
+                  value={ind.street} disabled />
+              ))}
             </div>
             <div className="form-group mb-6">
-              <input type="text" className="form-control w-full rounded"
-                placeholder="Town/Area" />
+              <p>City</p>
+              {indvData.map((ind, i) => (
+                <input key={i} type="text" className="form-control w-full rounded"
+                  value={ind.city} disabled />
+              ))}
             </div>
           </div>
 
           <div className="grid grid-cols-3 gap-4">
             <div className="form-group mb-6">
-              <input type="text" className="form-control w-full rounded"
-                placeholder="LGA" />
+              <p>City</p>
+              {indvData.map((ind, i) => (
+                <input key={i} type="text" className="form-control w-full rounded"
+                  value={ind.lga} disabled />
+              ))}
             </div>
 
             <div className="form-check form-check-inline">
+              <p>Type of Residence</p>
               <select className="form-select w-full" name="" id="typeofbusiness">
-                <option selected>Type of Residence</option>
+                <option selected>Select</option>
                 <option value="1">Bungalow</option>
                 <option value="2">Penthouse</option>
                 <option value="3">Mansion</option>
@@ -603,7 +633,7 @@ export const StartSingleIndividualAssessment = ({ payerprop, isFetching }) => {
               </select>
             </div>
 
-            <div className="form-check form-check-inline ml-5">
+            <div className="form-check form-check-inline ml-5 self-center">
               <p>Do you own your place of residence?</p>
               <div className="flex">
                 <div className="form-check form-check-inline">

@@ -100,7 +100,7 @@ const ViewPendingAssessment = () => {
 
   return (
     <>
-      <SectionTitle title="View direct assessments" subtitle="Pending direct assessments" />
+      <SectionTitle title="View direct assessments" subtitle="Pending Direct Assessments" />
 
       {isFetching && (
         <div className="flex justify-center item mb-2">

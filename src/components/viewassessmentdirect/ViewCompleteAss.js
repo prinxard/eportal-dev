@@ -101,7 +101,7 @@ const ViewCompleteAss = () => {
 
   return (
     <>
-      <SectionTitle title="View direct assessments" subtitle="View Completed assessments" />
+      <SectionTitle title="View direct assessments" subtitle="View Completed Assessments" />
 
       {isFetching && (
         <div className="flex justify-center item mb-2">
@@ -121,7 +121,7 @@ const ViewCompleteAss = () => {
         <div className="flex flex-col lg:flex-row lg:flex-wrap w-full lg:space-x-4">
           <div className="w-full lg:w-2/12">
             <NewFormInput
-              label="Search by year"
+              label="Search by kgtin"
               required
               onChange={searchHandler}
             />
