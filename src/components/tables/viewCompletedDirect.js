@@ -73,7 +73,7 @@ export const ViewCompletedTable = ({ remittance, totalemployees, totaltax, gross
                 {fields.map((field, j) => (
                   <td key={j} className="">
                     {/* {remittance[field.key]} */}
-                    <Link href={`/view/completeddirect/${remittance.year}`}>
+                    <Link href={`/view/completeddirect/Approve`}>
                       <a className="hover:text-blue-500">
                         {remittance[field.key]}
                       </a>
@@ -171,7 +171,7 @@ export const ViewSingleCompletedTable = ({ remittance, total }) => {
   return (
     <>
       <Widget>
-        <div className="overflow-x-auto">
+        {/* <div className="overflow-x-auto">
           <table className="table divide-y">
             <thead className="">
               <tr className="font-semibold text-blue-400">
@@ -201,6 +201,256 @@ export const ViewSingleCompletedTable = ({ remittance, total }) => {
               )}
             </tbody>
           </table>
+        </div> */}
+        <div className="block p-6 rounded-lg bg-white w-full">
+          <div className="flex">
+            <h6 className="p-2">Taxpayer Information</h6>
+          </div>
+          <p className="mb-3 font-bold"></p>
+          <form>
+            <div className="grid grid-cols-3 gap-4">
+
+              <div className="">
+                <p>Surname</p>
+                <input type="text" className="form-control w-full rounded"
+                  disabled />
+              </div>
+
+              <div className="form-group mb-6">
+                <p>First Name</p>
+                <input type="text" className="form-control w-full rounded"
+                  disabled />
+              </div>
+
+              <div className="form-group mb-6">
+                <p>Middle Name</p>
+                <input type="text" className="form-control w-full rounded"
+                  disabled />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-3 gap-4">
+              <div className="form-group mb-6">
+                <p>Title</p>
+                <input type="text" className="form-control w-full rounded"
+                  disabled />
+              </div>
+
+              <div className="form-group mb-6">
+                <p>Date of Birth</p>
+                <input type="text" className="form-control w-full rounded"
+                  disabled />
+              </div>
+              <div className="form-group mb-6">
+                <p>Phone number</p>
+                <input type="text" className="form-control w-full rounded"
+                  disabled />
+              </div>
+            </div>
+            <div className="grid grid-cols-3 gap-4">
+              <div className="form-group mb-6">
+                <p>Tax Office</p>
+                <input type="text" className="form-control w-full rounded"
+                  disabled />
+              </div>
+
+              <div className="form-group mb-6">
+                <p>Email</p>
+                <input type="text" className="form-control w-full rounded"
+                  disabled />
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </Widget>
+        
+      <Widget>
+      <div className="block p-6 rounded-lg bg-white w-full">
+          <div className="flex">
+            <h6 className="p-2">Income Information</h6>
+          </div>
+          <p className="mb-3 font-bold"></p>
+          <form>
+            <div className="grid grid-cols-3 gap-4">
+
+              <div className="">
+                <p>Surname</p>
+                <input type="text" className="form-control w-full rounded"
+                  disabled />
+              </div>
+
+              <div className="form-group mb-6">
+                <p>First Name</p>
+                <input type="text" className="form-control w-full rounded"
+                  disabled />
+              </div>
+
+              <div className="form-group mb-6">
+                <p>Middle Name</p>
+                <input type="text" className="form-control w-full rounded"
+                  disabled />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-3 gap-4">
+              <div className="form-group mb-6">
+                <p>Title</p>
+                <input type="text" className="form-control w-full rounded"
+                  disabled />
+              </div>
+
+              <div className="form-group mb-6">
+                <p>Date of Birth</p>
+                <input type="text" className="form-control w-full rounded"
+                  disabled />
+              </div>
+              <div className="form-group mb-6">
+                <p>Phone number</p>
+                <input type="text" className="form-control w-full rounded"
+                  disabled />
+              </div>
+            </div>
+            <div className="grid grid-cols-3 gap-4">
+              <div className="form-group mb-6">
+                <p>Tax Office</p>
+                <input type="text" className="form-control w-full rounded"
+                  disabled />
+              </div>
+
+              <div className="form-group mb-6">
+                <p>Email</p>
+                <input type="text" className="form-control w-full rounded"
+                  disabled />
+              </div>
+            </div>
+          </form>
+        </div>
+      </Widget>
+
+      <Widget>
+      <div className="block p-6 rounded-lg bg-white w-full">
+          <div className="flex">
+            <h6 className="p-2">Deductions Information</h6>
+          </div>
+          <p className="mb-3 font-bold"></p>
+          <form>
+            <div className="grid grid-cols-3 gap-4">
+
+              <div className="">
+                <p>Surname</p>
+                <input type="text" className="form-control w-full rounded"
+                  disabled />
+              </div>
+
+              <div className="form-group mb-6">
+                <p>First Name</p>
+                <input type="text" className="form-control w-full rounded"
+                  disabled />
+              </div>
+
+              <div className="form-group mb-6">
+                <p>Middle Name</p>
+                <input type="text" className="form-control w-full rounded"
+                  disabled />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-3 gap-4">
+              <div className="form-group mb-6">
+                <p>Title</p>
+                <input type="text" className="form-control w-full rounded"
+                  disabled />
+              </div>
+
+              <div className="form-group mb-6">
+                <p>Date of Birth</p>
+                <input type="text" className="form-control w-full rounded"
+                  disabled />
+              </div>
+              <div className="form-group mb-6">
+                <p>Phone number</p>
+                <input type="text" className="form-control w-full rounded"
+                  disabled />
+              </div>
+            </div>
+            <div className="grid grid-cols-3 gap-4">
+              <div className="form-group mb-6">
+                <p>Tax Office</p>
+                <input type="text" className="form-control w-full rounded"
+                  disabled />
+              </div>
+
+              <div className="form-group mb-6">
+                <p>Email</p>
+                <input type="text" className="form-control w-full rounded"
+                  disabled />
+              </div>
+            </div>
+          </form>
+        </div>
+      </Widget>
+
+      <Widget>
+      <div className="block p-6 rounded-lg bg-white w-full">
+          <div className="flex">
+            <h6 className="p-2">Other Asset Information</h6>
+          </div>
+          <p className="mb-3 font-bold"></p>
+          <form>
+            <div className="grid grid-cols-3 gap-4">
+
+              <div className="">
+                <p>Surname</p>
+                <input type="text" className="form-control w-full rounded"
+                  disabled />
+              </div>
+
+              <div className="form-group mb-6">
+                <p>First Name</p>
+                <input type="text" className="form-control w-full rounded"
+                  disabled />
+              </div>
+
+              <div className="form-group mb-6">
+                <p>Middle Name</p>
+                <input type="text" className="form-control w-full rounded"
+                  disabled />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-3 gap-4">
+              <div className="form-group mb-6">
+                <p>Title</p>
+                <input type="text" className="form-control w-full rounded"
+                  disabled />
+              </div>
+
+              <div className="form-group mb-6">
+                <p>Date of Birth</p>
+                <input type="text" className="form-control w-full rounded"
+                  disabled />
+              </div>
+              <div className="form-group mb-6">
+                <p>Phone number</p>
+                <input type="text" className="form-control w-full rounded"
+                  disabled />
+              </div>
+            </div>
+            <div className="grid grid-cols-3 gap-4">
+              <div className="form-group mb-6">
+                <p>Tax Office</p>
+                <input type="text" className="form-control w-full rounded"
+                  disabled />
+              </div>
+
+              <div className="form-group mb-6">
+                <p>Email</p>
+                <input type="text" className="form-control w-full rounded"
+                  disabled />
+              </div>
+            </div>
+          </form>
         </div>
       </Widget>
     </>

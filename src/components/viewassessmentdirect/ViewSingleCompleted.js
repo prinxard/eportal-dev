@@ -148,7 +148,7 @@ const ViewSingleCompleted = () => {
 
   return (
     <>
-      <SectionTitle title="View Uploads" subtitle="Annual PAYE Returns" />
+      <SectionTitle title="View Approve Assessment" subtitle="Approve Completed Assessment" />
       {isFetching && (
         <div className="flex justify-center item mb-2">
           <Loader
@@ -164,7 +164,7 @@ const ViewSingleCompleted = () => {
         </div>
       )}
       <Widget>
-        <div className="flex lg:flex-wrap w-full lg:space-x-4 justify-between items-center">
+        {/* <div className="flex lg:flex-wrap w-full lg:space-x-4 justify-between items-center">
           <div className="w-32">
             <NewFormInput
               label="Search by name"
@@ -172,7 +172,7 @@ const ViewSingleCompleted = () => {
               onChange={searchHandler}
             />
           </div>
-        </div>
+        </div> */}
         <div className="mt-4">
           {query !== "" ? (
             <>

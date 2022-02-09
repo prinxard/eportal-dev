@@ -22,9 +22,11 @@ export const StartAssessment = () => {
   const [disabled, setDisabled] = useState(true);
   const [validmsg, setvalidmsg] = useState("hidden");
   const [invalidmsg, setinvalidmsg] = useState("hidden");
-  const [payerDetails, setpayerDetails] = useState("");
+  const [payerDetails, setpayerDetails] = useState([]);
   const { register, handleSubmit } = useForm();
   const router = useRouter();
+  const [isFetching, setIsFetching] = useState(() => false);
+  const [isFetching2, setIsFetching2] = useState(() => false);
 
   const onSubmitform = async data => {
     let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZXJueW92aWVAZ21haWwuY29tIiwiZ3JvdXBzIjpbMSwyLDMsNSw0XSwiaWF0IjoxNjQ0MzY5MTg1LCJleHAiOjE2NDQ0MDUxODV9.36890eI0sYK2nqDxrUMj-JGtY4t4cLLPl5_M4OK-tR8'
@@ -35,17 +37,19 @@ export const StartAssessment = () => {
       "year": `${year}`,
       "kgtin": `${userkgtin}`
     }
-
+    setIsFetching2(true)
     try {
       await axios.post(`https://rhmapi.bespoque.dev/api/v1/forma/new-assessment`, createAsses, {
         headers: {
           'Authorization': `Bearer ${token}`
         },
       });
+      setIsFetching2(false)
       router.push(`/direct-asses/${userkgtin}`)
       console.log("Assesment Created");
     }
     catch (err) {
+      setIsFetching2(false)
       console.log(err);
     }
   };
@@ -58,7 +62,7 @@ export const StartAssessment = () => {
       "KGTIN": `${testkgtin}`
     }
     console.log(kgtin);
-
+    setIsFetching(true)
     try {
       let res = await axios.post(`https://rhmapi.bespoque.dev/api/v1/taxpayer/view-individual`, kgtin,
         {
@@ -67,14 +71,16 @@ export const StartAssessment = () => {
           },
         }
       );
+      setIsFetching(false)
       let userpayer = res.data.body
-      console.log(userpayer);
+      setpayerDetails(userpayer)
       Setvalidkgtinmessage("KGTIN is Valid");
       setDisabled(false)
       setvalidmsg('')
       setinvalidmsg('hidden')
       console.log("Success!");
     } catch (err) {
+      setIsFetching(false)
       setDisabled(true)
       setinvalidmsg('')
       setvalidmsg('hidden')
@@ -83,6 +89,35 @@ export const StartAssessment = () => {
   };
   return (
     <>
+      {isFetching && (
+        <div className="flex justify-center item mb-2">
+          <Loader
+            visible={isFetching}
+            type="BallTriangle"
+            color="#00FA9A"
+            height={19}
+            width={19}
+            timeout={0}
+            className="ml-2"
+          />
+          <p className="font-bold">Verifying kgtin...</p>
+        </div>
+      )}
+
+      {isFetching2 && (
+        <div className="flex justify-center item mb-2">
+          <Loader
+            visible={isFetching2}
+            type="BallTriangle"
+            color="#00FA9A"
+            height={19}
+            width={19}
+            timeout={0}
+            className="ml-2"
+          />
+          <p className="font-bold">Creating Assessment...</p>
+        </div>
+      )}
       <Widget>
         <div >
           <form onSubmit={handleSubmit(onSubmitform)} className="flex justify-around">
@@ -91,7 +126,15 @@ export const StartAssessment = () => {
               <div>
                 <label className="block" htmlFor="kgtin">Enter Taxpayer KGTIN</label>
                 <input onChange={event => setKgtEentered(event.target.value)} type="text" placeholder="Enter KGTIN" />
-                <small className={`block text-green-600 ${validmsg}`}>{validkgtinmessage}</small><small className={`block text-red-600 ${invalidmsg}`}>{invalidkgtinmessage}</small>
+                <div className="">
+                  {payerDetails.map((ind, i) => (
+                    <small className={`${validmsg}`} key={i}>{ind.surname} {ind.first_name}</small>
+                  ))}
+                </div>
+
+                <div className="">
+                  <small className={`text-red-600 ${invalidmsg}`}>{invalidkgtinmessage}</small>
+                </div>
               </div>
               <div className="self-center ml-2">
                 <a

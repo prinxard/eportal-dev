@@ -68,12 +68,12 @@ export const ViewPendingTable = ({ remittance, totalemployees, totaltax, grosssu
               <tr key={i} className="">
                 {fields.map((field, j) => (
                   <td key={j} className="">
-                    {/* {remittance[field.key]} */}
-                    <Link href={`/view/pendingdirect/${remittance.year}`}>
+                    {remittance[field.key]}
+                    {/* <Link href={`/view/pendingdirect/${remittance.year}`}>
                       <a className="hover:text-blue-500">
                         {remittance[field.key]}
                       </a>
-                    </Link>
+                    </Link> */}
                   </td>
                 ))}
               </tr>
