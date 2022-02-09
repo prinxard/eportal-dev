@@ -84,29 +84,6 @@ export const ViewCompletedTable = ({ remittance, totalemployees, totaltax, gross
             ))}
           </tbody>
         </table>
-        <div className="mt-16"></div>
-        <hr />
-        {/* <div className="flex justify-end">
-          <p className="px-6 font-semibold">Total</p>
-
-          <div className="flex flex-col">
-            <p className="px-6 pb-1">employees</p>
-            <p className="self-center font-semibold">{totalemployees}</p>
-          </div>
-
-          <div className="flex flex-col">
-            <p className="px-6 pb-1">Gross Salary</p>
-            <p className="self-center font-semibold">{formatNumber(grosssum)}</p>
-          </div>
-
-          <div className="flex flex-col">
-            <p className="px-6 pb-1">Expected</p>
-            <p className="self-center font-semibold">{formatNumber(totaltax)}</p>
-          </div>
-
-          <p className="px-6">Variance</p>
-        </div> */}
-        {/* <div>{total}</div> */}
       </Widget>
     </>
   );
@@ -202,6 +179,22 @@ export const ViewSingleCompletedTable = ({ remittance, total }) => {
             </tbody>
           </table>
         </div> */}
+        <div className="flex justify-end">
+          <button
+            // style={{ backgroundColor: "#84abeb" }}
+            className="btn btn-default bg-green-600 text-white mr-4 btn-outlined bg-transparent rounded-md"
+            type="submit"
+          >
+            Approve Assessment
+          </button>
+          <button
+            // style={{ backgroundColor: "#84abeb" }}
+            className="btn bg-red-600	btn-default text-white btn-outlined bg-transparent rounded-md"
+            type="submit"
+          >
+            Decline Assessment
+          </button>
+        </div>
         <div className="block p-6 rounded-lg bg-white w-full">
           <div className="flex">
             <h6 className="p-2">Taxpayer Information</h6>
@@ -264,9 +257,9 @@ export const ViewSingleCompletedTable = ({ remittance, total }) => {
         </div>
 
       </Widget>
-        
+
       <Widget>
-      <div className="block p-6 rounded-lg bg-white w-full">
+        <div className="block p-6 rounded-lg bg-white w-full">
           <div className="flex">
             <h6 className="p-2">Income Information</h6>
           </div>
@@ -329,7 +322,7 @@ export const ViewSingleCompletedTable = ({ remittance, total }) => {
       </Widget>
 
       <Widget>
-      <div className="block p-6 rounded-lg bg-white w-full">
+        <div className="block p-6 rounded-lg bg-white w-full">
           <div className="flex">
             <h6 className="p-2">Deductions Information</h6>
           </div>
@@ -392,7 +385,7 @@ export const ViewSingleCompletedTable = ({ remittance, total }) => {
       </Widget>
 
       <Widget>
-      <div className="block p-6 rounded-lg bg-white w-full">
+        <div className="block p-6 rounded-lg bg-white w-full">
           <div className="flex">
             <h6 className="p-2">Other Asset Information</h6>
           </div>

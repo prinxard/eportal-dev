@@ -148,7 +148,7 @@ const ViewSingleCompleted = () => {
 
   return (
     <>
-      <SectionTitle title="View Approve Assessment" subtitle="Approve Completed Assessment" />
+      <SectionTitle title="Approve Assessment" subtitle="Approve Completed Assessment" />
       {isFetching && (
         <div className="flex justify-center item mb-2">
           <Loader

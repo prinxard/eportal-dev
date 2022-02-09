@@ -147,7 +147,7 @@ const ViewSinglePending = () => {
 
   return (
     <>
-      <SectionTitle title="View Direct Assessments" subtitle="View single assessment" />
+      <SectionTitle title="View Direct Assessments" subtitle="View Single Assessment" />
       {isFetching && (
         <div className="flex justify-center item mb-2">
           <Loader
