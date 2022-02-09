@@ -27,6 +27,7 @@ const ViewAnnualSingle = () => {
   useEffect(() => {
     if (router && router.query) {
       let year = router.query.ref;
+      console.log(year);
       year = `${year}-01-01`
       let yearValue = {
         "year": `${year}`

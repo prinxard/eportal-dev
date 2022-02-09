@@ -181,10 +181,7 @@ export const ViewAnnualTableSingle = ({ remittance, total }) => {
                   <td></td>
                   <td></td>
                   <td></td>
-                  {/* <td>{formatNumber(total.totalSalary)}</td>
-                  <td>{formatNumber(total.totalChargeable)}</td>
-                  <td>{formatNumber(total.totalRelief)}</td>
-                  <td>{formatNumber(total.totalTax)}</td> */}
+                
                 </tr>
               )}
             </tbody>

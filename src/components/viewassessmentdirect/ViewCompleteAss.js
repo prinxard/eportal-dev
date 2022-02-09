@@ -27,7 +27,7 @@ const ViewCompleteAss = () => {
   const [query, setQuery] = useState(() => "");
   useEffect(() => {
     // setAuthToken();
-    let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZXJueW92aWVAZ21haWwuY29tIiwiZ3JvdXBzIjpbMSwyLDMsNSw0XSwiaWF0IjoxNjQ0MzEwODc4LCJleHAiOjE2NDQzNDY4Nzh9.9zhhW9Npvl-B5Rhx_D2YO9wf3RJlPQwIDZqFp7zDml0'
+    let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZXJueW92aWVAZ21haWwuY29tIiwiZ3JvdXBzIjpbMSwyLDMsNSw0XSwiaWF0IjoxNjQ0MzY5MTg1LCJleHAiOjE2NDQ0MDUxODV9.36890eI0sYK2nqDxrUMj-JGtY4t4cLLPl5_M4OK-tR8'
 
     const fetchPost = async () => {
       try {

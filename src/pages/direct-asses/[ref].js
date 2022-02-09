@@ -1,5 +1,5 @@
-import { StartSingleIndividualAssessment } from "../../components/assessment/viewAssessment";
+import ViewSingleDirectAssessment from "../../components/viewdirectassessm/ViewSingleAssessment";
 
-const Index = () => <StartSingleIndividualAssessment />;
+const Index = () => <ViewSingleDirectAssessment />;
 
 export default Index;

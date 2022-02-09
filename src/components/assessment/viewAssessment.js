@@ -12,9 +12,9 @@ import { useForm } from "react-hook-form";
 import url from '../../config/url';
 import axios from "axios";
 import setAuthToken from "../../functions/setAuthToken";
+import { useRouter } from "next/router";
 
 export const StartAssessment = () => {
-  const { register, handleSubmit } = useForm();
   const [kgtEnentered, setKgtEentered] = useState('')
   const [validkgtinmessage, Setvalidkgtinmessage] = useState('')
   const [invalidkgtinmessage, Setinvalidkgtinmessage] = useState('')
@@ -22,24 +22,36 @@ export const StartAssessment = () => {
   const [validmsg, setvalidmsg] = useState("hidden");
   const [invalidmsg, setinvalidmsg] = useState("hidden");
   const [payerDetails, setpayerDetails] = useState("");
+  const { register, handleSubmit } = useForm();
+  const router = useRouter();
 
   const onSubmitform = async data => {
-
+    let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZXJueW92aWVAZ21haWwuY29tIiwiZ3JvdXBzIjpbMSwyLDMsNSw0XSwiaWF0IjoxNjQ0MzY5MTg1LCJleHAiOjE2NDQ0MDUxODV9.36890eI0sYK2nqDxrUMj-JGtY4t4cLLPl5_M4OK-tR8'
+    const userkgtin = kgtEnentered
     const year = data.year;
     console.log(data.year);
-
+    let createAsses = {
+      "year": `${year}`,
+      "kgtin": `${userkgtin}`
+    }
 
     try {
-
-
-
-    } catch (err) {
-
+      await axios.post(`https://rhmapi.bespoque.dev/api/v1/forma/new-assessment`, createAsses, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        },
+      });
+      router.push(`/direct-asses/${userkgtin}`)
+      console.log("Assesment Created");
+    }
+    catch (err) {
+      console.log(err);
     }
   };
 
-  setAuthToken();
+  // setAuthToken();
   const verifiyKGTIN = async () => {
+    let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZXJueW92aWVAZ21haWwuY29tIiwiZ3JvdXBzIjpbMSwyLDMsNSw0XSwiaWF0IjoxNjQ0MzY5MTg1LCJleHAiOjE2NDQ0MDUxODV9.36890eI0sYK2nqDxrUMj-JGtY4t4cLLPl5_M4OK-tR8'
     let testkgtin = kgtEnentered
     let kgtin = {
       "KGTIN": `${testkgtin}`
@@ -47,7 +59,13 @@ export const StartAssessment = () => {
     console.log(kgtin);
 
     try {
-      let res = await axios.post(`https://rhmapi.bespoque.dev/api/v1/taxpayer/view-individual`, kgtin)
+      let res = await axios.post(`https://rhmapi.bespoque.dev/api/v1/taxpayer/view-individual`, kgtin,
+        {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          },
+        }
+      );
       let userpayer = res.data.body
       console.log(userpayer);
       Setvalidkgtinmessage("KGTIN is Valid");
@@ -113,7 +131,7 @@ export const StartAssessment = () => {
 };
 
 
-export const StartSingleIndividualAssessment = () => {
+export const StartSingleIndividualAssessment = ({ payerprop }) => {
 
   const [toggleel, setToggle] = useState('hidden')
   const [togglee2, setToggle2] = useState('hidden')
@@ -457,6 +475,8 @@ export const StartSingleIndividualAssessment = () => {
   };
 
 
+  let indvData = payerprop
+  console.log(indvData);
 
   return (
     <>
@@ -471,7 +491,13 @@ export const StartSingleIndividualAssessment = () => {
           name="year"
         />
       </div>
-
+      <p className="">
+        {indvData.map((ind, i) => (
+          <span key={i} className="">
+            {ind.city}
+          </span>
+        ))}
+      </p>
       <div className="block p-6 rounded-lg bg-white w-full">
         <div className="flex">
           <h6 className="p-2">Taxpayer Information</h6>
@@ -481,8 +507,9 @@ export const StartSingleIndividualAssessment = () => {
         <form>
           <div className="grid grid-cols-3 gap-4">
             <div className="mb-6">
+              {indvData}
               <input type="text" className="form-control w-full rounded"
-                placeholder="Surname" />
+                placeholder="Surname" disabled/>
             </div>
 
             <div className="form-group mb-6">
@@ -572,7 +599,7 @@ export const StartSingleIndividualAssessment = () => {
               <div className="flex">
                 <div className="form-check form-check-inline">
                   <input onChange={onresidenceToggleYes} className="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="inlineRadioOptions" id="inlineRadio1" />
-                  <label className="form-check-label inline-block text-gray-800" for="inlineRadio10">Owner</label>
+                  <label className="form-check-label inline-block text-gray-800" htmlFor="inlineRadio10">Owner</label>
                 </div>
 
                 <div className="form-check form-check-inline ml-5">
