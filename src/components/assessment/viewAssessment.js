@@ -13,6 +13,7 @@ import url from '../../config/url';
 import axios from "axios";
 import setAuthToken from "../../functions/setAuthToken";
 import { useRouter } from "next/router";
+import Loader from "react-loader-spinner";
 
 export const StartAssessment = () => {
   const [kgtEnentered, setKgtEentered] = useState('')
@@ -131,7 +132,7 @@ export const StartAssessment = () => {
 };
 
 
-export const StartSingleIndividualAssessment = ({ payerprop }) => {
+export const StartSingleIndividualAssessment = ({ payerprop, isFetching }) => {
 
   const [toggleel, setToggle] = useState('hidden')
   const [togglee2, setToggle2] = useState('hidden')
@@ -478,8 +479,12 @@ export const StartSingleIndividualAssessment = ({ payerprop }) => {
   let indvData = payerprop
   console.log(indvData);
 
+
+
   return (
     <>
+
+
       <div className="flex justify-start">
         <div className="mr-2">
           <SectionTitle title="Applicable during the year ended 31st December" />
@@ -491,13 +496,6 @@ export const StartSingleIndividualAssessment = ({ payerprop }) => {
           name="year"
         />
       </div>
-      <p className="">
-        {indvData.map((ind, i) => (
-          <span key={i} className="">
-            {ind.city}
-          </span>
-        ))}
-      </p>
       <div className="block p-6 rounded-lg bg-white w-full">
         <div className="flex">
           <h6 className="p-2">Taxpayer Information</h6>
@@ -506,31 +504,42 @@ export const StartSingleIndividualAssessment = ({ payerprop }) => {
         <p className="mb-3 font-bold"></p>
         <form>
           <div className="grid grid-cols-3 gap-4">
-            <div className="mb-6">
-              {indvData}
-              <input type="text" className="form-control w-full rounded"
-                placeholder="Surname" disabled/>
+
+            <div className="">
+              {indvData.map((ind, i) => (
+                <input key={i} type="text" className="form-control w-full rounded"
+                  value={ind.surname} disabled />
+              ))}
             </div>
 
             <div className="form-group mb-6">
-              <input type="text" className="form-control w-full rounded"
-                placeholder="First Name" />
+              {indvData.map((ind, i) => (
+                <input key={i} type="text" className="form-control w-full rounded"
+                  value={ind.first_name} disabled />
+              ))}
             </div>
+
             <div className="form-group mb-6">
-              <input type="text" className="form-control w-full rounded"
-                placeholder="Middlename" />
+              {indvData.map((ind, i) => (
+                <input key={i} type="text" className="form-control w-full rounded"
+                  value={ind.middle_name} disabled />
+              ))}
             </div>
           </div>
 
           <div className="grid grid-cols-3 gap-4">
             <div className="form-group mb-6">
-              <input type="text" className="form-control w-full rounded"
-                placeholder="Title" />
+              {indvData.map((ind, i) => (
+                <input key={i} type="text" className="form-control w-full rounded"
+                  value={ind.indv_title} disabled />
+              ))}
             </div>
 
             <div className="form-group mb-6">
-              <input type="text" className="form-control w-full rounded"
-                placeholder="Date of birth" />
+              {indvData.map((ind, i) => (
+                <input key={i} type="text" className="form-control w-full rounded"
+                  value={ind.birth_date} disabled />
+              ))}
             </div>
             <div className="form-group mb-6">
               <input type="text" className="form-control w-full rounded"
@@ -2135,6 +2144,7 @@ export const StartSingleIndividualAssessment = ({ payerprop }) => {
           </div>
         </div>
       </Widget>
+
     </>
   )
 };

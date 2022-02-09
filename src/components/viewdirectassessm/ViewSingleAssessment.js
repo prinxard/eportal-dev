@@ -4,10 +4,12 @@ import { StartSingleIndividualAssessment } from '../assessment/viewAssessment';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import axios from "axios";
+import Loader from 'react-loader-spinner';
 
 const ViewSingleDirectAssessment = () => {
   const router = useRouter();
-  const [payerprop, setpayerprop] = useState();
+  const [payerprop, setpayerprop] = useState([]);
+  const [isFetching, setIsFetching] = useState(() => true);
 
   useEffect(() => {
     if (router && router.query) {
@@ -28,11 +30,11 @@ const ViewSingleDirectAssessment = () => {
             }
           );
             let IndData = res.data.body
-            // console.log(IndData);
             setpayerprop(IndData)
-            // console.log(payerprop);
+            setIsFetching(false);
         } catch (err) {
           console.log(err);
+          setIsFetching(false);
         }
       };
       fetchPost();
@@ -40,13 +42,29 @@ const ViewSingleDirectAssessment = () => {
   }, [router]);
 
   return (
+    
     <>
-      <SectionTitle title="Start Single Direct Assessment" />
-
+  
+      <SectionTitle title="Start Individual Direct Assessment" />
+     
       <Widget>
-        <>
-          <StartSingleIndividualAssessment payerprop={payerprop}/>
-        </>
+
+      {isFetching ? (
+        <div className="flex justify-center item mb-2">
+          <Loader
+            visible={isFetching}
+            type="BallTriangle"
+            color="#00FA9A"
+            height={19}
+            width={19}
+            timeout={0}
+            className="ml-2"
+          />
+          <p>Fetching data...</p>
+        </div>
+      ): <StartSingleIndividualAssessment payerprop={payerprop} isFetching={isFetching}/>}
+          
+       
       </Widget>
     </>
   );
