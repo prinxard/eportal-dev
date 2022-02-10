@@ -43,7 +43,7 @@ const fields = [
 
 export const ViewCompletedTable = ({ remittance, totalemployees, totaltax, grosssum }) => {
   let items = remittance;
-  console.log(remittance)
+  // console.log(remittance)
   remittance.map((remittance) => {
     remittance["amount"] = formatNumber(remittance["amount"]);
     if (remittance["status"] === 1) {
@@ -73,7 +73,7 @@ export const ViewCompletedTable = ({ remittance, totalemployees, totaltax, gross
                 {fields.map((field, j) => (
                   <td key={j} className="">
                     {/* {remittance[field.key]} */}
-                    <Link href={`/view/completeddirect/Approve`}>
+                    <Link href={`/view/completeddirect/${remittance.assessment_id}`}>
                       <a className="hover:text-blue-500">
                         {remittance[field.key]}
                       </a>
@@ -141,54 +141,21 @@ const singleFields = [
   },
 ];
 
-export const ViewSingleCompletedTable = ({ remittance, total }) => {
-  const items = remittance;
-  console.log(remittance);
+export const ViewSingleCompletedTable = ({ payerprop}) => {
+  const items = payerprop;
+  console.log(payerprop.asset.acquired_date);
 
   return (
     <>
       <Widget>
-        {/* <div className="overflow-x-auto">
-          <table className="table divide-y">
-            <thead className="">
-              <tr className="font-semibold text-blue-400">
-                {singleFields.map((field, i) => (
-                  <th key={i} className="">
-                    {field.name}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody className="divide-y">
-              {items.map((remittance, i) => (
-                <tr key={i} className="">
-                  {singleFields.map((field, j) => (
-                    <td key={j} className="">
-                      {remittance[field.key]}
-                    </td>
-                  ))}
-                </tr>
-              ))}
-              {items.length > 0 && (
-                <tr className="font-semibold">
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              )}
-            </tbody>
-          </table>
-        </div> */}
         <div className="flex justify-end">
           <button
-            // style={{ backgroundColor: "#84abeb" }}
             className="btn btn-default bg-green-600 text-white mr-4 btn-outlined bg-transparent rounded-md"
             type="submit"
           >
             Approve Assessment
           </button>
           <button
-            // style={{ backgroundColor: "#84abeb" }}
             className="btn bg-red-600	btn-default text-white btn-outlined bg-transparent rounded-md"
             type="submit"
           >

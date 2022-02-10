@@ -39,7 +39,7 @@ const ViewCompleteAss = () => {
           }
         );
         res = res.data.body.assessmentApproved;
-        console.log(res)
+        // console.log(res)
         let employeessTotal = res.length
         setTotalemp(employeessTotal)
         let records = [];
@@ -99,6 +99,7 @@ const ViewCompleteAss = () => {
   };
 
   const searchedPost = search(post).slice(indexOfFirstPost, indexOfLastPost);
+  console.log(currentPosts);
 
   return (
     <>

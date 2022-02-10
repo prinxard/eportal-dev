@@ -213,6 +213,11 @@ export const StartSingleIndividualAssessment = ({ payerprop, isFetching }) => {
       "", test: "", test: "", test: ""
   }])
 
+  const [formValuesAddline, setFormValuesformValuesAddline] = useState([{
+    test: "", test: "", test:
+      "", test: "", test: "", test: ""
+  }])
+
   let handleChange = (i, e) => {
     let newFormValues = [...formValues];
     newFormValues[i][e.target.name] = e.target.value;
@@ -227,6 +232,14 @@ export const StartSingleIndividualAssessment = ({ payerprop, isFetching }) => {
     }])
   }
 
+  const addFormFields2 = (event) => {
+    event.preventDefault()
+    setFormValues2([...formValues2, {
+      test: "", test: "", test:
+        "", test: "", test: "", test: ""
+    }])
+  }
+
   const addFormFields3 = (event) => {
     event.preventDefault()
     setFormValues3([...formValues3, {
@@ -235,9 +248,10 @@ export const StartSingleIndividualAssessment = ({ payerprop, isFetching }) => {
     }])
   }
 
-  const addFormFields2 = (event) => {
+
+  const addLine = (event) => {
     event.preventDefault()
-    setFormValues2([...formValues2, {
+    setFormValuesformValuesAddline([...formValuesAddline, {
       test: "", test: "", test:
         "", test: "", test: "", test: ""
     }])
@@ -1257,7 +1271,7 @@ export const StartSingleIndividualAssessment = ({ payerprop, isFetching }) => {
 
 
                     <div className="mb-6 grid grid-cols-3 gap-4">
-                      <button
+                      <button onClick={addLine}
                         style={{ backgroundColor: "#84abeb" }}
                         className="btn w-64 btn-default text-white btn-outlined bg-transparent rounded-md"
                         type="submit"

@@ -143,12 +143,12 @@ const initialState = [
               },
               {
                 url: '/view/pendingdirect',
-                title: 'Pending Application',
+                title: 'Draft Assessment',
                 items: [],
               },
               {
                 url: '/view/completeddirect',
-                title: 'Completed Application',
+                title: 'Submitted Assessment',
                 items: [],
               },
             ],
