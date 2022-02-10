@@ -547,11 +547,10 @@ export const StartSingleIndividualAssessment = ({ payerprop, isFetching }) => {
         <p className="mb-3 font-bold"></p>
         <form>
           <div className="grid grid-cols-3 gap-4">
-
             <div className="">
               <p>Surname</p>
               {indvData.map((ind, i) => (
-                <input key={i} type="text" className="form-control w-full rounded"
+                <input key={i} type="text" className="form-control w-full rounded font-light text-gray-500"
                   value={ind.surname} disabled />
               ))}
             </div>
@@ -559,7 +558,7 @@ export const StartSingleIndividualAssessment = ({ payerprop, isFetching }) => {
             <div className="form-group mb-6">
               <p>First Name</p>
               {indvData.map((ind, i) => (
-                <input key={i} type="text" className="form-control w-full rounded"
+                <input key={i} type="text" className="form-control w-full rounded font-light text-gray-500"
                   value={ind.first_name} disabled />
               ))}
             </div>
@@ -567,7 +566,7 @@ export const StartSingleIndividualAssessment = ({ payerprop, isFetching }) => {
             <div className="form-group mb-6">
               <p>Middle Name</p>
               {indvData.map((ind, i) => (
-                <input key={i} type="text" className="form-control w-full rounded"
+                <input key={i} type="text" className="form-control w-full rounded font-light text-gray-500"
                   value={ind.middle_name} disabled />
               ))}
             </div>
@@ -577,7 +576,7 @@ export const StartSingleIndividualAssessment = ({ payerprop, isFetching }) => {
             <div className="form-group mb-6">
               <p>Title</p>
               {indvData.map((ind, i) => (
-                <input key={i} type="text" className="form-control w-full rounded"
+                <input key={i} type="text" className="form-control w-full rounded font-light text-gray-500"
                   value={ind.indv_title} disabled />
               ))}
             </div>
@@ -585,14 +584,14 @@ export const StartSingleIndividualAssessment = ({ payerprop, isFetching }) => {
             <div className="form-group mb-6">
               <p>Date of Birth</p>
               {indvData.map((ind, i) => (
-                <input key={i} type="text" className="form-control w-full rounded"
+                <input key={i} type="text" className="form-control w-full rounded font-light text-gray-500"
                   value={ind.birth_date} disabled />
               ))}
             </div>
             <div className="form-group mb-6">
               <p>Phone number</p>
               {indvData.map((ind, i) => (
-                <input key={i} type="text" className="form-control w-full rounded"
+                <input key={i} type="text" className="form-control w-full rounded font-light text-gray-500"
                   value={ind.phone_number} disabled />
               ))}
             </div>
@@ -606,7 +605,7 @@ export const StartSingleIndividualAssessment = ({ payerprop, isFetching }) => {
               </select> */}
               <p>Tax Office</p>
               {indvData.map((ind, i) => (
-                <input key={i} type="text" className="form-control w-full rounded"
+                <input key={i} type="text" className="form-control w-full rounded font-light text-gray-500"
                   value={ind.tax_office} disabled />
               ))}
             </div>
@@ -614,7 +613,7 @@ export const StartSingleIndividualAssessment = ({ payerprop, isFetching }) => {
             <div className="form-group mb-6">
               <p>Email</p>
               {indvData.map((ind, i) => (
-                <input key={i} type="text" className="form-control w-full rounded"
+                <input key={i} type="text" className="form-control w-full rounded font-light text-gray-500"
                   value={ind.email} disabled />
               ))}
 
@@ -632,7 +631,7 @@ export const StartSingleIndividualAssessment = ({ payerprop, isFetching }) => {
             <div className="mb-6">
               <p>House No</p>
               {indvData.map((ind, i) => (
-                <input key={i} type="text" className="form-control w-full rounded"
+                <input key={i} type="text" className="form-control w-full rounded font-light text-gray-500"
                   value={ind.house_no} disabled />
               ))}
             </div>
@@ -640,14 +639,14 @@ export const StartSingleIndividualAssessment = ({ payerprop, isFetching }) => {
             <div className="form-group mb-6">
               <p>Street</p>
               {indvData.map((ind, i) => (
-                <input key={i} type="text" className="form-control w-full rounded"
+                <input key={i} type="text" className="form-control w-full rounded font-light text-gray-500"
                   value={ind.street} disabled />
               ))}
             </div>
             <div className="form-group mb-6">
               <p>City</p>
               {indvData.map((ind, i) => (
-                <input key={i} type="text" className="form-control w-full rounded"
+                <input key={i} type="text" className="form-control w-full rounded font-light text-gray-500"
                   value={ind.city} disabled />
               ))}
             </div>
@@ -657,7 +656,7 @@ export const StartSingleIndividualAssessment = ({ payerprop, isFetching }) => {
             <div className="form-group mb-6">
               <p>City</p>
               {indvData.map((ind, i) => (
-                <input key={i} type="text" className="form-control w-full rounded"
+                <input key={i} type="text" className="form-control w-full rounded font-light text-gray-500"
                   value={ind.lga} disabled />
               ))}
             </div>
