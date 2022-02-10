@@ -59,6 +59,7 @@ const ViewPendingAssessment = () => {
           rec.totalChargeable = rec.totalChargeable / 12;
           rec.totalChargeable = formatNumber(rec.totalChargeable);
           rec.period = rec.payPeriod;
+          rec.createtime = dateformat(rec.createtime, "dd mmm yyyy hh: mm")
           rec.year = dateformat(rec.year, "yyyy");
           records.push(rec);
         }
