@@ -141,9 +141,9 @@ const singleFields = [
   },
 ];
 
-export const ViewSingleCompletedTable = ({ payerprop}) => {
+export const ViewSingleCompletedTable = ({ payerprop }) => {
   const items = payerprop;
-  console.log(payerprop.asset.acquired_date);
+  console.log(items);
 
   return (
     <>
@@ -164,60 +164,114 @@ export const ViewSingleCompletedTable = ({ payerprop}) => {
         </div>
         <div className="block p-6 rounded-lg bg-white w-full">
           <div className="flex">
-            <h6 className="p-2">Taxpayer Information</h6>
+            <h6 className="pb-2">Employment Information</h6>
           </div>
           <p className="mb-3 font-bold"></p>
           <form>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-5 gap-4">
 
               <div className="">
-                <p>Surname</p>
-                <input type="text" className="form-control w-full rounded"
-                  disabled />
+                <p>Employer Name</p>
+                <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                  value={items.employed.emp_name} disabled />
               </div>
 
               <div className="form-group mb-6">
-                <p>First Name</p>
-                <input type="text" className="form-control w-full rounded"
-                  disabled />
+                <p>Employer Address</p>
+                <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                  value={items.employed.emp_addr} disabled />
               </div>
 
               <div className="form-group mb-6">
-                <p>Middle Name</p>
-                <input type="text" className="form-control w-full rounded"
-                  disabled />
+                <p>Gross Pay</p>
+                <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                  value={items.employed.gross_pay} disabled />
+              </div>
+              <div className="form-group mb-6">
+                <p>Tax Deducted</p>
+                <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                  value={items.employed.tax_deducted} disabled />
+              </div>
+              <div className="form-group mb-6">
+                <p>Start Date</p>
+                <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                  value={items.employed.start_date} disabled />
               </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-4">
-              <div className="form-group mb-6">
-                <p>Title</p>
-                <input type="text" className="form-control w-full rounded"
-                  disabled />
+            <div className="flex">
+              <h6 className="pb-2">Self Employment Information</h6>
+            </div>
+
+            <div className="grid grid-cols-5 gap-4">
+              <div className="form-group mb-2">
+                <p>Business Type</p>
+                <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                  value={items.selfEmployed.business_type} disabled />
               </div>
 
-              <div className="form-group mb-6">
-                <p>Date of Birth</p>
-                <input type="text" className="form-control w-full rounded"
-                  disabled />
+              <div className="form-group mb-2">
+                <p>Address</p>
+                <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                  value={items.selfEmployed.business_addr} disabled />
               </div>
-              <div className="form-group mb-6">
-                <p>Phone number</p>
-                <input type="text" className="form-control w-full rounded"
-                  disabled />
+              <div className="form-group mb-2">
+                <p>Business Name</p>
+                <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                  value={items.selfEmployed.business_name} disabled />
+              </div>
+              <div className="form-group mb-2">
+                <p>Business Start Date</p>
+                <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                  value={items.selfEmployed.business_start_date} disabled />
+              </div>
+              <div className="form-group mb-2">
+                <p>Cash Income Expenses</p>
+                <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                  value={items.selfEmployed.cash_inc_expense} disabled />
+              </div>
+              <div className="form-group mb-2">
+                <p>Figures Estimated</p>
+                <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                  value={items.selfEmployed.figures_estimated} disabled />
+              </div>
+              <div className="form-group mb-2">
+                <p>Income Earned</p>
+                <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                  value={items.selfEmployed.income_earned} disabled />
+              </div>
+              <div className="form-group mb-2">
+                <p>Other Income</p>
+                <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                  value={items.selfEmployed.other_income} disabled />
               </div>
             </div>
-            <div className="grid grid-cols-3 gap-4">
+
+            <div className="flex  mt-6">
+              <h6 className="pb-2">Partnership Information</h6>
+            </div>
+
+            <div className="grid grid-cols-5 gap-4">
               <div className="form-group mb-6">
-                <p>Tax Office</p>
-                <input type="text" className="form-control w-full rounded"
-                  disabled />
+                <p>Partner Name</p>
+                <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                  value={items.partner.name} disabled />
               </div>
 
               <div className="form-group mb-6">
-                <p>Email</p>
-                <input type="text" className="form-control w-full rounded"
-                  disabled />
+                <p>Partner Address</p>
+                <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                  value={items.partner.addr} disabled />
+              </div>
+              <div className="form-group mb-6">
+                <p>Percentage</p>
+                <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                  value={items.partner.percentage} disabled />
+              </div>
+              <div className="form-group mb-6">
+                <p>Phone</p>
+                <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                  value={items.partner.phone} disabled />
               </div>
             </div>
           </form>
@@ -227,48 +281,53 @@ export const ViewSingleCompletedTable = ({ payerprop}) => {
 
       <Widget>
         <div className="block p-6 rounded-lg bg-white w-full">
-          <div className="flex">
-            <h6 className="p-2">Income Information</h6>
-          </div>
-          <p className="mb-3 font-bold"></p>
           <form>
-            <div className="grid grid-cols-3 gap-4">
-
+            <div className="flex">
+              <h6 className="pb-2">Pension Information</h6>
+            </div>
+            <div className="grid grid-cols-5 gap-4">
               <div className="">
-                <p>Surname</p>
-                <input type="text" className="form-control w-full rounded"
-                  disabled />
+                <p>PFA</p>
+                <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                  value={items.pension.pfa} disabled />
               </div>
 
               <div className="form-group mb-6">
-                <p>First Name</p>
-                <input type="text" className="form-control w-full rounded"
-                  disabled />
+                <p>PFA Address</p>
+                <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                  value={items.pension.pfa_addr} disabled />
               </div>
-
               <div className="form-group mb-6">
-                <p>Middle Name</p>
-                <input type="text" className="form-control w-full rounded"
-                  disabled />
+                <p>Gross Amount</p>
+                <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                  value={items.pension.gross_amount} disabled />
               </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="flex">
+              <h6 className="pb-2">NHIS Information</h6>
+            </div>
+            <div className="grid grid-cols-5 gap-4">
               <div className="form-group mb-6">
-                <p>Title</p>
-                <input type="text" className="form-control w-full rounded"
-                  disabled />
+                <p>Amount</p>
+                <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                  value={items.nhis.amount} disabled />
               </div>
 
               <div className="form-group mb-6">
-                <p>Date of Birth</p>
-                <input type="text" className="form-control w-full rounded"
-                  disabled />
+                <p>Company</p>
+                <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                  value={items.nhis.company} disabled />
               </div>
               <div className="form-group mb-6">
-                <p>Phone number</p>
-                <input type="text" className="form-control w-full rounded"
-                  disabled />
+                <p>Issuance number</p>
+                <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                  value={items.nhis.insurance_no} disabled />
+              </div>
+              <div className="form-group mb-6">
+                <p>Address</p>
+                <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                  value={items.nhis.addr} disabled />
               </div>
             </div>
             <div className="grid grid-cols-3 gap-4">
