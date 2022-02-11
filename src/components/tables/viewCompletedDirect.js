@@ -172,78 +172,115 @@ export const ViewSingleCompletedTable = ({ payerprop }) => {
 
               <div className="">
                 <p>Employer Name</p>
-                <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                  value={items.employed.emp_name} disabled />
+                {items.employed == null || "" ?
+                  <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                    disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                      value={items.employed.emp_name} disabled />
+                }
               </div>
 
               <div className="form-group mb-6">
                 <p>Employer Address</p>
-                <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                  value={items.employed.emp_addr} disabled />
+                {items.employed == null || "" ?
+                  <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                    disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                      value={items.employed.emp_addr} disabled />
+                }
               </div>
 
               <div className="form-group mb-6">
                 <p>Gross Pay</p>
-                <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                  value={items.employed.gross_pay} disabled />
+                {items.employed == null || "" ?
+                  <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                    disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                      value={items.employed.gross_pay} disabled />
+                }
               </div>
               <div className="form-group mb-6">
                 <p>Tax Deducted</p>
-                <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                  value={items.employed.tax_deducted} disabled />
+                {items.employed == null || "" ?
+                  <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                    disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                      value={items.employed.tax_deducted} disabled />
+                }
               </div>
               <div className="form-group mb-6">
                 <p>Start Date</p>
-                <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                  value={items.employed.start_date} disabled />
+                {items.employed == null || "" ?
+                  <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                    disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                      value={items.employed.start_date} disabled />
+                }
               </div>
             </div>
 
-            {/* <div className="flex">
-              <h6 className="pb-2">Self Employment Information</h6>
-            </div> */}
-
+            <h6>Self Employment Info</h6>
             <div className="grid grid-cols-5 gap-4">
               <div className="form-group mb-2">
                 <p>Business Type</p>
-                <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                  value={items.selfEmployed.business_type} disabled />
+                {items.selfEmployed == null || "" ?
+                  <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                    disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                      value={items.selfEmployed.business_type} disabled />
+                }
               </div>
 
               <div className="form-group mb-2">
                 <p>Address</p>
-                <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                  value={items.selfEmployed.business_addr} disabled />
+                {items.selfEmployed == null || "" ?
+                  <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                    disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                      value={items.selfEmployed.business_addr} disabled />
+                }
               </div>
               <div className="form-group mb-2">
                 <p>Business Name</p>
-                <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                  value={items.selfEmployed.business_name} disabled />
+                {items.selfEmployed == null || "" ?
+                  <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                    disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                      value={items.selfEmployed.business_name} disabled />
+                }
               </div>
+
               <div className="form-group mb-2">
                 <p>Business Start Date</p>
-                <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                  value={items.selfEmployed.business_start_date} disabled />
+                {items.selfEmployed == null || "" ?
+                  <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                    disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                      value={items.selfEmployed.business_start_date} disabled />
+                }
               </div>
               <div className="form-group mb-2">
                 <p>Cash Income Expenses</p>
-                <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                  value={items.selfEmployed.cash_inc_expense} disabled />
+                {items.selfEmployed == null || "" ?
+                  <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                    disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                      value={items.selfEmployed.cash_inc_expense} disabled />
+                }
               </div>
               <div className="form-group mb-2">
                 <p>Figures Estimated</p>
-                <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                  value={items.selfEmployed.figures_estimated} disabled />
+                {items.selfEmployed == null || "" ?
+                  <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                    disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                      value={items.selfEmployed.figures_estimated} disabled />
+                }
               </div>
               <div className="form-group mb-2">
                 <p>Income Earned</p>
-                <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                  value={items.selfEmployed.income_earned} disabled />
+                {items.selfEmployed == null || "" ?
+                  <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                    disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                      value={items.selfEmployed.income_earned} disabled />
+                }
               </div>
               <div className="form-group mb-2">
                 <p>Other Income</p>
-                <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                  value={items.selfEmployed.other_income} disabled />
+                {items.selfEmployed == null || "" ?
+                  <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                    disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                      value={items.selfEmployed.other_income} disabled />
+                }
               </div>
             </div>
 
@@ -254,24 +291,36 @@ export const ViewSingleCompletedTable = ({ payerprop }) => {
             <div className="grid grid-cols-5 gap-4">
               <div className="form-group mb-6">
                 <p>Partner Name</p>
-                <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                  value={items.partner.name} disabled />
+                {items.partner == null || "" ?
+                  <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                    disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                      value={items.partner.name} disabled />
+                }
               </div>
 
               <div className="form-group mb-6">
                 <p>Partner Address</p>
-                <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                  value={items.partner.addr} disabled />
+                {items.partner == null || "" ?
+                  <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                    disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                      value={items.partner.addr} disabled />
+                }
               </div>
               <div className="form-group mb-6">
                 <p>Percentage</p>
-                <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                  value={items.partner.percentage} disabled />
+                {items.partner == null || "" ?
+                  <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                    disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                      value={items.partner.percentage} disabled />
+                }
               </div>
               <div className="form-group mb-6">
                 <p>Phone</p>
-                <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                  value={items.partner.phone} disabled />
+                {items.partner == null || "" ?
+                  <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                    disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                      value={items.partner.phone} disabled />
+                }
               </div>
             </div>
           </form>
@@ -288,19 +337,28 @@ export const ViewSingleCompletedTable = ({ payerprop }) => {
             <div className="grid grid-cols-5 gap-4">
               <div className="">
                 <p>PFA</p>
-                <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                  value={items.pension.pfa} disabled />
+                {items.pension == null || "" ?
+                  <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                    disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                      value={items.pension.pfa} disabled />
+                }
               </div>
 
               <div className="form-group mb-6">
                 <p>PFA Address</p>
-                <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                  value={items.pension.pfa_addr} disabled />
+                {items.pension == null || "" ?
+                  <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                    disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                      value={items.pension.pfa_addr} disabled />
+                }
               </div>
               <div className="form-group mb-6">
                 <p>Gross Amount</p>
-                <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                  value={items.pension.gross_amount} disabled />
+                {items.pension == null || "" ?
+                  <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                    disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                      value={items.pension.gross_amount} disabled />
+                }
               </div>
             </div>
 
@@ -310,24 +368,37 @@ export const ViewSingleCompletedTable = ({ payerprop }) => {
             <div className="grid grid-cols-5 gap-4">
               <div className="form-group mb-6">
                 <p>Amount</p>
-                <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                  value={items.nhis.amount} disabled />
+                {items.nhis == null || "" ?
+                  <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                    disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                      value={items.nhis.amount} disabled />
+                }
               </div>
 
               <div className="form-group mb-6">
                 <p>Company</p>
-                <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                  value={items.nhis.company} disabled />
+                {items.nhis == null || "" ?
+                  <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                    disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                      value={items.nhis.company} disabled />
+                }
               </div>
               <div className="form-group mb-6">
                 <p>Issuance number</p>
-                <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                  value={items.nhis.insurance_no} disabled />
+                {items.nhis == null || "" ?
+                  <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                    disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                      value={items.nhis.insurance_no} disabled />
+                }
               </div>
               <div className="form-group mb-6">
                 <p>Address</p>
-                <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                  value={items.nhis.addr} disabled />
+                {items.nhis == null || "" ?
+                  <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                    disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                      value={items.nhis.addr} disabled />
+                }
+
               </div>
             </div>
             <div className="flex">
@@ -336,29 +407,46 @@ export const ViewSingleCompletedTable = ({ payerprop }) => {
             <div className="grid grid-cols-5 gap-4">
               <div className="form-group mb-6">
                 <p>Brand</p>
-                <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                  value={items.vechicles.brand} disabled />
+                {items.vechicles == null || "" ?
+                  <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                     disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                     value={items.vechicles.brand} disabled />
+                }
               </div>
 
               <div className="form-group mb-6">
                 <p>Cost</p>
-                <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                  value={items.vechicles.cost} disabled />
+                {items.vechicles == null || "" ?
+                  <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                    disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                      value={items.vechicles.cost} disabled />
+                }
+
               </div>
               <div className="form-group mb-6">
                 <p>Model</p>
-                <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                  value={items.vechicles.model} disabled />
+                {items.vechicles == null || "" ?
+                  <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                    disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                      value={items.vechicles.model} disabled />
+                }
+
               </div>
               <div className="form-group mb-6">
                 <p>Purchase date</p>
-                <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                  value={items.vechicles.purchase_date} disabled />
+                {items.vechicles == null || "" ?
+                  <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                     disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                     value={items.vechicles.purchase_date} disabled />
+                }
               </div>
               <div className="form-group mb-6">
                 <p>Year</p>
-                <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                  value={items.vechicles.year} disabled />
+                {items.vechicles == null || "" ?
+                  <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                     disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                     value={items.vechicles.year}  disabled />
+                }
               </div>
             </div>
           </form>
