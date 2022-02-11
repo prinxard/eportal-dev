@@ -9,7 +9,7 @@ import { ViewSingleCompletedTable } from '../tables/viewCompletedDirect';
 
 const ViewSingleCompleted = () => {
   const router = useRouter();
-  const [payerprop, setpayerprop] = useState([]);
+  const [payerprop, setpayerprop] = useState({});
   const [isFetching, setIsFetching] = useState(() => true);
 
   useEffect(() => {
