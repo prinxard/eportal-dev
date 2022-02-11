@@ -214,7 +214,9 @@ export const ViewSingleCompletedTable = ({ payerprop }) => {
               </div>
             </div>
 
-            <h6>Self Employment Info</h6>
+            <div className="flex">
+              <h6 className="pb-2">Self Employment Information</h6>
+            </div>
             <div className="grid grid-cols-5 gap-4">
               <div className="form-group mb-2">
                 <p>Business Type</p>
@@ -409,8 +411,8 @@ export const ViewSingleCompletedTable = ({ payerprop }) => {
                 <p>Brand</p>
                 {items.vechicles == null || "" ?
                   <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                     disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                     value={items.vechicles.brand} disabled />
+                    disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                      value={items.vechicles.brand} disabled />
                 }
               </div>
 
@@ -436,16 +438,16 @@ export const ViewSingleCompletedTable = ({ payerprop }) => {
                 <p>Purchase date</p>
                 {items.vechicles == null || "" ?
                   <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                     disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                     value={items.vechicles.purchase_date} disabled />
+                    disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                      value={items.vechicles.purchase_date} disabled />
                 }
               </div>
               <div className="form-group mb-6">
                 <p>Year</p>
                 {items.vechicles == null || "" ?
                   <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                     disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
-                     value={items.vechicles.year}  disabled />
+                    disabled /> : <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                      value={items.vechicles.year} disabled />
                 }
               </div>
             </div>
