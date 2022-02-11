@@ -199,9 +199,9 @@ export const ViewSingleCompletedTable = ({ payerprop }) => {
               </div>
             </div>
 
-            <div className="flex">
+            {/* <div className="flex">
               <h6 className="pb-2">Self Employment Information</h6>
-            </div>
+            </div> */}
 
             <div className="grid grid-cols-5 gap-4">
               <div className="form-group mb-2">
@@ -330,24 +330,42 @@ export const ViewSingleCompletedTable = ({ payerprop }) => {
                   value={items.nhis.addr} disabled />
               </div>
             </div>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="flex">
+              <h6 className="pb-2">Vehicle Information</h6>
+            </div>
+            <div className="grid grid-cols-5 gap-4">
               <div className="form-group mb-6">
-                <p>Tax Office</p>
-                <input type="text" className="form-control w-full rounded"
-                  disabled />
+                <p>Brand</p>
+                <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                  value={items.vechicles.brand} disabled />
               </div>
 
               <div className="form-group mb-6">
-                <p>Email</p>
-                <input type="text" className="form-control w-full rounded"
-                  disabled />
+                <p>Cost</p>
+                <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                  value={items.vechicles.cost} disabled />
+              </div>
+              <div className="form-group mb-6">
+                <p>Model</p>
+                <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                  value={items.vechicles.model} disabled />
+              </div>
+              <div className="form-group mb-6">
+                <p>Purchase date</p>
+                <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                  value={items.vechicles.purchase_date} disabled />
+              </div>
+              <div className="form-group mb-6">
+                <p>Year</p>
+                <input type="text" className="form-control w-full rounded font-light text-gray-500"
+                  value={items.vechicles.year} disabled />
               </div>
             </div>
           </form>
         </div>
       </Widget>
 
-      <Widget>
+      {/* <Widget>
         <div className="block p-6 rounded-lg bg-white w-full">
           <div className="flex">
             <h6 className="p-2">Deductions Information</h6>
@@ -408,9 +426,9 @@ export const ViewSingleCompletedTable = ({ payerprop }) => {
             </div>
           </form>
         </div>
-      </Widget>
+      </Widget> */}
 
-      <Widget>
+      {/* <Widget>
         <div className="block p-6 rounded-lg bg-white w-full">
           <div className="flex">
             <h6 className="p-2">Other Asset Information</h6>
@@ -471,7 +489,7 @@ export const ViewSingleCompletedTable = ({ payerprop }) => {
             </div>
           </form>
         </div>
-      </Widget>
+      </Widget> */}
     </>
   );
 };
